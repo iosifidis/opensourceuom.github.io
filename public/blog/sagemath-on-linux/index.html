@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Open Source UoM</title>
+    
+    <!-- Meta tags for SEO -->
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="dark-theme">
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="site-logo">
+                    <a href="/" class="brand">
+                        <p class="site-title">Open Source UoM</p>
+                    </a>
+                </div>
+                <nav class="primary-nav">
+                    <ul>
+                        <li><a href="/">ΑΡΧΙΚΗ</a></li>
+                        <li><a href="/blog/">BLOG</a></li>
+                        <li><a href="/xorigoi/">ΧΟΡΗΓΟΙ</a></li>
+                        <li><a href="/register/">ΕΓΓΡΑΦΗ</a></li>
+                        <li><a href="https://my.uom.gr" target="_blank">myUoM</a></li>
+                        <li class="has-children">
+                            <a href="#">ΠΗΓΕΣ <span class="caret">▼</span></a>
+                            <ul class="sub-menu">
+                                <li><a href="https://github.com/open-source-uom">Αποθετήριο Github</a></li>
+                                <li><a href="https://gitlab.com/opensourceuom">Αποθετήριο Gitlab</a></li>
+                                <li><a href="/videos/">Βίντεο</a></li>
+                                <li><a href="/vasikes-entoles-linux/">Βασικές εντολές LINUX</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="content" class="main-content">
+            
+<article class="single-post-container">
+    <div class="container">
+        <header class="entry-header">
+            <h1 class="entry-title">SageMath: Η ελεύθερη δύναμη των Μαθηματικών στον GNU/Linux υπολογιστή σου</h1>
+            <div class="entry-meta">
+                <span class="author">από Efstathios Iosifidis</span>
+                <span class="date">07 Oct 2025</span>
+            </div>
+            
+            <div class="post-cover">
+                <img src="/storage/2025/10/sagemath_logo.png" alt="SageMath: Η ελεύθερη δύναμη των Μαθηματικών στον GNU/Linux υπολογιστή σου" loading="eager">
+            </div>
+            
+        </header>
+
+        <div class="entry-content">
+            <p>Ως φοιτητές, συχνά ερχόμαστε σε επαφή με πανίσχυρα μαθηματικά λογισμικά όπως το MATLAB, το Maple ή η Mathematica. Είναι εξαιρετικά εργαλεία για τα μαθήματα και τις εργασίες μας, όμως έχουν ένα σημαντικό μειονέκτημα: το υψηλό κόστος της άδειας χρήσης. Αυτό δυσκολεύει την πρακτική εξάσκηση στο σπίτι και περιορίζει τη χρήση τους μετά την αποφοίτηση.</p>
+<p>Εδώ έρχεται να δώσει τη λύση το <strong><a href="https://www.sagemath.org/?rel=opensource.uom.gr">SageMath</a></strong>, μια βιώσιμη, δωρεάν και ανοικτού κώδικα εναλλακτική. Στόχος του είναι να προσφέρει τις ίδιες δυνατότητες με τα εμπορικά πακέτα, χωρίς κανένα κόστος. Μαθαίνοντας SageMath, επενδύετε σε ένα εργαλείο που θα μπορείτε να χρησιμοποιείτε ελεύθερα για πάντα, τόσο στις σπουδές σας όσο και στην επαγγελματική σας πορεία.</p>
+<h3>Τι είναι το SageMath;</h3>
+<p>Το SageMath είναι ένα ολοκληρωμένο μαθηματικό περιβάλλον που συνδυάζει τη δύναμη δεκάδων κορυφαίων πακέτων ανοικτού κώδικα, όπως τα NumPy, SciPy, matplotlib και Sympy, κάτω από μια ενιαία και φιλική διεπαφή. Η καρδιά του SageMath είναι η γλώσσα προγραμματισμού <strong>Python</strong>, γεγονός που το καθιστά εξαιρετικά ευέλικτο και εύκολο στην εκμάθηση για όσους έχουν ήδη μια βασική επαφή μαζί της. Καλύπτει ένα ευρύ φάσμα των μαθηματικών, από την άλγεβρα, τη γεωμετρία και τη θεωρία αριθμών μέχρι την κρυπτογραφία και την ανάλυση δεδομένων.</p>
+<p>Σε αυτόν τον οδηγό, θα δούμε τους πιο δημοφιλείς τρόπους για να το χρησιμοποιήσετε και να το εγκαταστήσετε στο Linux λειτουργικό σας σύστημα.</p>
+<hr>
+<h2>Μέθοδος 1: Online Χρήση (Χωρίς Εγκατάσταση)</h2>
+<p>Ο πιο γρήγορος και εύκολος τρόπος να δοκιμάσετε το SageMath είναι μέσω διαδικτύου. Δεν χρειάζεται να εγκαταστήσετε απολύτως τίποτα!</p>
+<ul>
+<li><strong><a href="https://sagecell.sagemath.org/?rel=opensource.uom.gr">SageCell</a>:</strong> Ιδανικό για γρήγορους υπολογισμούς. Το SageCell σας δίνει ένα «κελί» όπου μπορείτε να γράψετε κώδικα SageMath και να δείτε άμεσα το αποτέλεσμα. Είναι τέλειο για να δοκιμάσετε μια εντολή ή να λύσετε μια άσκηση χωρίς καμία άλλη διαδικασία.</li>
+<li><strong><a href="https://cocalc.com/?rel=opensource.uom.gr">CoCalc</a>:</strong> Μια ολοκληρωμένη πλατφόρμα στο cloud. Το CoCalc σας προσφέρει ένα πλήρες περιβάλλον εργασίας με Jupyter Notebooks, τερματικό Linux και δυνατότητα συνεργασίας σε πραγματικό χρόνο με άλλους χρήστες. Το δωρεάν πλάνο έχει κάποιους περιορισμούς, όπως πιο αργή απόκριση και έλλειψη πρόσβασης στο διαδίκτυο από το περιβάλλον εργασίας, αλλά είναι παραπάνω από αρκετό για τις περισσότερες φοιτητικές εργασίες.</li>
+<li><strong><a href="https://colab.research.google.com/?rel=opensource.uom.gr">Google Colab</a></strong>: Πολλοί φοιτητές είναι ήδη εξοικειωμένοι με το Google Colab για εργασίες Python και machine learning. Αυτό σημαίνει ότι μπορείτε να πάρετε ένα Jupyter Notebook που δημιουργήσατε τοπικά με το SageMath, να το ανεβάσετε στο Google Drive σας και να το ανοίξετε απευθείας στο Colab για να συνεχίσετε την εργασία σας. Επειδή το Colab βασίζεται στην ίδια τεχνολογία σημειωματαρίων, η εμπειρία χρήσης είναι σχεδόν πανομοιότυπη, δίνοντάς σας την αίσθηση ότι δουλεύετε απευθείας στο SageMath, αλλά με τα τεράστια πλεονεκτήματα της υποδομής της Google: δωρεάν πρόσβαση σε υπολογιστική ισχύ (ακόμα και GPU για πιο απαιτητικούς υπολογισμούς), μηδενική ρύθμιση και άψογη ενσωμάτωση με το Google Drive για αποθήκευση και διαμοιρασμό των εργασιών σας.</li>
+<li><a href="https://mybinder.org/?rel=opensource.uom.gr"><strong>Binder</strong></a>: Εκτελέσιμο Περιβάλλον με ένα Κλικ. Το Binder είναι μια φανταστική υπηρεσία που μετατρέπει ένα αποθετήριο κώδικα (π.χ. από το GitHub) σε μια συλλογή από ζωντανά, εκτελέσιμα Jupyter Notebooks. Η ιδέα είναι απλή: ένας καθηγητής ή ένας ερευνητής μπορεί να ανεβάσει τα σημειωματάριά του μαζί με ένα αρχείο ρυθμίσεων που δηλώνει ότι χρειάζεται το SageMath (όχι απαραίτητα). Στη συνέχεια, το Binder δημιουργεί έναν ειδικό σύνδεσμο. Οποιοσδήποτε πατάει αυτόν τον σύνδεσμο, μεταφέρεται σε ένα προσωρινό, ζωντανό περιβάλλον Jupyter, με το SageMath και όλες τις απαραίτητες βιβλιοθήκες ήδη εγκατεστημένες, έτοιμο να εκτελέσει τον κώδικα. Είναι το απόλυτο εργαλείο για τον διαμοιρασμό ακαδημαϊκού υλικού, παραδειγμάτων και αναπαραγώγιμης έρευνας, καθώς εξαλείφει πλήρως την ανάγκη για εγκαταστάσεις από την πλευρά του χρήστη.</li>
+</ul>
+<hr>
+<h2>Μέθοδος 2: Εγκατάσταση μέσω Διαχειριστή Πακέτων (Ο προτεινόμενος τρόπος)</h2>
+<p>Αν θέλετε μια πλήρη, τοπική εγκατάσταση, ο διαχειριστής πακέτων της διανομής σας είναι ο καλύτερος σας φίλος.</p>
+<h3>Εγκατάσταση σε Arch Linux</h3>
+<p>Για τους χρήστες Arch Linux, η διαδικασία είναι απλή. Ανοίξτε ένα τερματικό και εκτελέστε:</p>
+<h6><code>sudo pacman -S sagemath</code></h6>
+<p>Για να ξεκινήσετε το περιβάλλον Jupyter Notebook, απλά δώστε την εντολή “ <strong>sage -n jupyter</strong>” και θα ανοίξει αυτόματα στον browser σας.</p>
+<h3>Εγκατάσταση σε Debian (Stable) / Ubuntu (22.04 LTS και παλαιότερες)</h3>
+<p>Σε σταθερές εκδόσεις του Debian και σε παλαιότερες εκδόσεις του Ubuntu, το SageMath υπάρχει στα επίσημα αποθετήρια.</p>
+<h6>sudo apt update  sudo apt install sagemath sagemath-jupyter sagemath-doc-en</h6>
+<p><strong>Σημαντική Σημείωση:</strong> Το πακέτο sagemath έχει αφαιρεθεί από τις πιο πρόσφατες εκδόσεις, όπως το <strong>Ubuntu 24.04</strong> και το <strong>Debian Testing</strong>, λόγω τεχνικών ασυμβατοτήτων με νεότερες εκδόσεις της Python. Αν έχετε μια από αυτές τις διανομές, θα πρέπει να ακολουθήσετε μία από τις παρακάτω “Παγκόσμιες Μεθόδους”.</p>
+<hr>
+<h2>Μέθοδος 3: Παγκόσμιες Μέθοδοι (Για κάθε διανομή Linux)</h2>
+<p>Αυτές οι μέθοδοι λειτουργούν σχεδόν σε οποιοδήποτε σύστημα Linux και είναι ιδανικές αν η διανομή σας (όπως openSUSE, Fedora, ή νεότερες Ubuntu/Debian) δεν παρέχει το SageMath άμεσα.</p>
+<h3>Docker: Η Σύγχρονη και Ευέλικτη Λύση (Προτείνεται)</h3>
+<p>Το Docker σας επιτρέπει να τρέξετε το SageMath μέσα σε ένα “κοντέινερ”, ένα απομονωμένο περιβάλλον που περιέχει τα πάντα που χρειάζεται για να λειτουργήσει, χωρίς να επηρεάζει το υπόλοιπο σύστημά σας. Είναι ο πιο καθαρός και αξιόπιστος τρόπος εγκατάστασης.</p>
+<ol>
+<li><strong>Λήψη του Docker image:</strong>
+<ul>
+<li><code>sudo docker pull sagemath/sagemath</code></li>
+</ul>
+</li>
+<li><strong>Εκκίνηση του SageMath με Jupyter Notebook:</strong>
+<ul>
+<li><code>sudo docker run --rm -p 8888:8888 sagemath/sagemath:latest</code></li>
+<li>Η παράμετρος –rm καθαρίζει αυτόματα το κοντέινερ όταν το σταματάτε.</li>
+</ul>
+</li>
+<li><strong>Σύνδεση:</strong> Αφού εκτελέσετε την εντολή, το τερματικό θα σας δείξει μια διεύθυνση URL που περιέχει ένα “token” (έναν κωδικό πρόσβασης). Αντιγράψτε ολόκληρη τη διεύθυνση (π.χ., http://127.0.0.1:8888/?token=…) και επικολλήστε την στον browser σας για να συνδεθείτε στο Jupyter.</li>
+<li><strong>Τερματισμός:</strong> Για να σταματήσετε το SageMath, απλά γυρίστε στο τερματικό που εκτελέσατε την εντολή και πατήστε Ctrl+C.</li>
+</ol>
+<p><img src="/storage/2025/10/sagemath-1024x576.jpg" alt="Sagemath"></p>
+<h3>Εγκατάσταση από Πηγαίο Κώδικα (Για προχωρημένους)</h3>
+<p>Αυτή η μέθοδος περιλαμβάνει τη μεταγλώττιση (compiling) του SageMath από την αρχή. Απαιτεί αρκετό χρόνο (ακόμα και ώρες) και χώρο στον δίσκο, αλλά σας δίνει την απολύτως τελευταία έκδοση, βελτιστοποιημένη για τον υπολογιστή σας.</p>
+<ol>
+<li><strong>Λήψη:</strong> Κατεβάστε το συμπιεσμένο αρχείο του πηγαίου κώδικα από την <a href="https://www.sagemath.org/download-source.html">επίσημη ιστοσελίδα λήψεων</a>.</li>
+<li><strong>Αποσυμπίεση:</strong> Αποσυμπιέστε το αρχείο που κατεβάσατε.</li>
+<li><strong>Μεταγλώττιση:</strong> Μεταβείτε στον φάκελο που δημιουργήθηκε και ακολουθήστε τις επίσημες οδηγίες, που συνήθως περιλαμβάνουν τις εντολές <strong>./configure</strong> και <strong>make</strong>.</li>
+</ol>
+<hr>
+<h2>Εναλλακτικές Εφαρμογές Σημειωματαρίου (Notebook)</h2>
+<p>Το Jupyter είναι το de facto περιβάλλον για το SageMath, αλλά υπάρχουν και άλλες εφαρμογές που μπορείτε να χρησιμοποιήσετε ως front-end.</p>
+<p><strong>Porto:</strong> Μια εναλλακτική εφαρμογή για notebooks που μπορείτε να βρείτε στο Flathub.</p>
+<h6><code>flatpak install flathub org.cvfosammmm.Porto</code></h6>
+<p><strong>Σημείωση:</strong> Το Porto είναι απλώς το γραφικό περιβάλλον. Για να το χρησιμοποιήσετε με το SageMath, πρέπει πρώτα να έχετε εγκαταστήσει το SageMath με μία από τις παραπάνω μεθόδους και στη συνέχεια να ρυθμίσετε το Porto ώστε να χρησιμοποιεί τον πυρήνα (kernel) του SageMath.</p>
+<p><img src="/storage/2025/10/porto-1024x576.jpg" alt="Porto"></p>
+<h2>Επίλογος</h2>
+<p>Το SageMath είναι ένα απίστευτα ισχυρό εργαλείο για κάθε φοιτητή που ασχολείται με τα μαθηματικά, τη μηχανική ή την επιστήμη των υπολογιστών. Είτε επιλέξετε την άμεση λύση του <strong>SageCell</strong>, την ευελιξία του <strong>Docker</strong>, είτε τη σταθερότητα του διαχειριστή πακέτων της διανομής σας, η επένδυση χρόνου για την εκμάθησή του θα σας ανταμείψει πολλαπλά. Σας ενθαρρύνουμε να το δοκιμάσετε, να πειραματιστείτε και να γίνετε μέλος της κοινότητας του πανεπιστημίου μας αλλά και παγκόσμιας κοινότητας ανοικτού λογισμικού</p>
+
+        </div>
+
+        
+        <footer class="entry-footer">
+            <div class="tags-list">
+                <span>Ετικέτες:</span>
+                
+                <span class="tag">Install</span>
+                
+                <span class="tag">SageMath</span>
+                
+            </div>
+        </footer>
+        
+    </div>
+</article>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p>Open Source UoM | Με τη δύναμη του <a href="https://go.dev/" target="_blank">Go</a> και φιλοξενείται στο <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

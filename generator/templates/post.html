@@ -1,0 +1,33 @@
+{{ define "content" }}
+<article class="single-post-container">
+    <div class="container">
+        <header class="entry-header">
+            <h1 class="entry-title">{{ .Post.Title }}</h1>
+            <div class="entry-meta">
+                {{ if .Post.Author }}<span class="author">από {{ .Post.Author }}</span>{{ end }}
+                {{ if .Post.Date }}<span class="date">{{ .Post.Date.Format "02 Jan 2006" }}</span>{{ end }}
+            </div>
+            {{ if .Post.FeaturedImage }}
+            <div class="post-cover">
+                <img src="{{ .Post.FeaturedImage }}" alt="{{ .Post.Title }}" loading="eager">
+            </div>
+            {{ end }}
+        </header>
+
+        <div class="entry-content">
+            {{ .Post.Content }}
+        </div>
+
+        {{ if .Post.Tags }}
+        <footer class="entry-footer">
+            <div class="tags-list">
+                <span>Ετικέτες:</span>
+                {{ range .Post.Tags }}
+                <span class="tag">{{ . }}</span>
+                {{ end }}
+            </div>
+        </footer>
+        {{ end }}
+    </div>
+</article>
+{{ end }}

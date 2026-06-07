@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Open Source UoM</title>
+    
+    <!-- Meta tags for SEO -->
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="dark-theme">
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="site-logo">
+                    <a href="/" class="brand">
+                        <p class="site-title">Open Source UoM</p>
+                    </a>
+                </div>
+                <nav class="primary-nav">
+                    <ul>
+                        <li><a href="/">ΑΡΧΙΚΗ</a></li>
+                        <li><a href="/blog/">BLOG</a></li>
+                        <li><a href="/xorigoi/">ΧΟΡΗΓΟΙ</a></li>
+                        <li><a href="/register/">ΕΓΓΡΑΦΗ</a></li>
+                        <li><a href="https://my.uom.gr" target="_blank">myUoM</a></li>
+                        <li class="has-children">
+                            <a href="#">ΠΗΓΕΣ <span class="caret">▼</span></a>
+                            <ul class="sub-menu">
+                                <li><a href="https://github.com/open-source-uom">Αποθετήριο Github</a></li>
+                                <li><a href="https://gitlab.com/opensourceuom">Αποθετήριο Gitlab</a></li>
+                                <li><a href="/videos/">Βίντεο</a></li>
+                                <li><a href="/vasikes-entoles-linux/">Βασικές εντολές LINUX</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="content" class="main-content">
+            
+<article class="single-post-container">
+    <div class="container">
+        <header class="entry-header">
+            <h1 class="entry-title">Βασική εγκατάσταση διανομής Fedora Linux</h1>
+            <div class="entry-meta">
+                <span class="author">από Efstathios Iosifidis</span>
+                <span class="date">15 Nov 2022</span>
+            </div>
+            
+            <div class="post-cover">
+                <img src="/storage/2022/09/Fedora.png" alt="Βασική εγκατάσταση διανομής Fedora Linux" loading="eager">
+            </div>
+            
+        </header>
+
+        <div class="entry-content">
+            <p>Η <a href="https://getfedora.org/">διανομή Fedora</a> αποτελεί μια από τις 4 βασικές και γνωστές διανομές ( <a href="https://distrowatch.com/table.php?distribution=fedora">σύμφωνα με το distrowatch</a>). Ξεκίνησε το 2003, όταν η εταιρία Red Hat αποφάσισε να παρέχει την <a href="https://distrowatch.com/table.php?distribution=redhat">διανομή Red Hat</a> επί πληρωμή (με συνδρομή) στις πολλές εταιρίες που την χρησιμοποιούσαν επαγγελματικά σε servers. Εκείνο το έτος δημιούργησε το κοινοτικό project Fedora Linux, το οποίο χρησιμοποιεί ως “πηγή” όπου δημιουργείται η διανομή Red Hat Enterprise Linux (RHEL). Η εταιρία Red Hat παρέχει χρηματοδότηση και υποδομές στο project Fedora Linux για την ανάπτυξη της κοινότητας. Στην κοινότητα του ΕΛΛΑΚ είναι γνωστή για την ενσωμάτωση της τελευταίας λέξης τεχνολογιών και εφαρμογών ελεύθερου λογισμικού και γι’ αυτό την χρησιμοποιούν πιο έμπειροι χρήστες ή προγραμματιστές αλλά και οι τελικοί χρήστες για την απλότητα και την σταθερότητά της.</p>
+<p>Από την έκδοση 21 και έπειτα, το Fedora διατίθεται σε τρεις εκδόσεις:</p>
+<ul>
+<li>Workstation, για laptops και PCs</li>
+<li>Server</li>
+<li>IoT</li>
+</ul>
+<p>Εδώ θα ασχοληθούμε με την Workstation έκδοση. Κατ’αρχάς, η Workstation έκδοση έρχεται με προεγκατεστημένο το γραφικό περιβάλλον GNOME. Υπάρχουν και τα <a href="https://spins.fedoraproject.org/">spins</a> με άλλα περιβάλλοντα όπως το <a href="https://spins.fedoraproject.org/el/kde">KDE Plasma</a>, το <a href="https://spins.fedoraproject.org/el/xfce">XFCE</a>, το <a href="https://spins.fedoraproject.org/el/lxqt">LXQt</a>, το <a href="https://spins.fedoraproject.org/el/lxde">LXDE</a>, το <a href="https://spins.fedoraproject.org/el/mate-compiz">MATE-Compiz</a>, το <a href="https://spins.fedoraproject.org/el/cinnamon">Cinnamon</a> αλλά και <a href="https://spins.fedoraproject.org/el/soas">SoaS</a> (Sugar on a Stick, με ένα περιβάλλον ειδικό για παιδιά).</p>
+<p>Η εγκατάσταση είναι η ίδια για όλα τα γραφικά περιβάλλοντα αλλά και για όλες τις τελευταίες εκδόσεις. Η έκδοση 36 ήταν αυτή που ήταν σε κυκλοφορία κατά την συγγραφή του οδηγού. Προτού κάνετε κάποια από τα παρακάτω βήματα, <strong>δημιουργήστε ένα αντίγραφο ασφαλείας των αρχείων του υπολογιστή σας</strong>. Ακολουθήστε τα παρακάτω βήματα για την εγκατάσταση.</p>
+<h3>Λήψη και προετοιμασία του μέσου εγκατάστασης</h3>
+<p>Το πρώτο πράγμα που πρέπει να κάνετε είναι να κατεβάσετε το στιγμιότυπο του συστήματος (ISO) από την κεντρική ιστοσελίδα <a href="https://getfedora.org/">https://getfedora.org/</a>.</p>
+<p>Εκεί θα βρείτε ένα σύνδεσμο για να κατεβάσετε το “Fedora Workstation” (“Download Now”) που σας προωθεί στη σελίδα <a href="https://getfedora.org/workstation/download/">https://getfedora.org/workstation/download/</a>. Εκεί υπάρχουν διάφορα κουμπιά για “Download”. Πρέπει να κάνετε κλικ σε αυτό που σας ταιριάζει (π.χ το x86_64 DVD ISO) για να ξεκινήσει η λήψη του ISO αρχείου. Μόλις κατέβει, πρέπει να δημιουργήσετε ένα Live USB. Προτείνουμε είτε το <a href="https://www.ventoy.net/en/index.html">Ventoy</a> είτε το <a href="https://www.balena.io/etcher/">Etcher</a>. Εναλλακτικά, εάν έχετε Windows ή MAC, μπορείτε να κατεβάσετε από την παραπάνω σελίδα το <strong>Fedora Media Writer</strong> και αυτό το εργαλείο θα σας κάνει την εγγραφή στο USB.</p>
+<h3>Εγκατάσταση Fedora</h3>
+<p>Αφού προετοιμάστε το μέσο εγκατάστασης, <strong>προχωρήστε στην εκκίνηση στον υπολογιστή σας</strong>. Προσοχή, ίσως πρέπει να πατήσετε ένα συνδυασμό πλήκτρων για να εκκινήσει από το μέσο. Επίσης ίσως χρειάζεται να έχετε απενεργοποιημένο το secure boot. Αυτό εξαρτάται από την μάρκα υπολογιστή που έχετε.</p>
+<p>Μπορείτε να ξεκινήσετε την εγκατάσταση απευθείας, αλλά είναι χρήσιμο να επιλέξετε πρώτα το “Try Fedora”, για να βεβαιωθείτε ότι η διανομή αναγνωρίζει σωστά το hardware του υπολογιστή, όπως την κάρτα δικτύου και την ασύρματη κάρτα.</p>
+<p><img src="/storage/2022/09/fedora-install-try-install-1024x640.png" alt=""></p>
+<p>Αφού κάνετε τις δοκιμές που θέλετε, πατήστε το εικονίδιο <strong>Install to Hard Drive</strong> που βρίσκεται στην μπάρα με τα αγαπημένα (και πιο συχνά χρησιμοποιούμενα) προγράμματα. Θα ανοίξει ο οδηγός εγκατάστασης, όπου στην πρώτη οθόνη θα μας ζητήσει να επιλέξουμε τη γλώσσα μας καθώς και τη χώρα μας <strong>.</strong> Στην ουσία επιλέγουμε την γλώσσα που θέλουμε να εμφανίζει ο εγκαταστάτης αλλά αυτό αναγνωρίζει και την γλώσσα του συστήματος που θα έχουμε μετά την εγκατάσταση. Μόλις γίνει αυτό, συνεχίζουμε.</p>
+<p><img src="/storage/2022/09/fedora-install-language-1024x640.png" alt="Εγκατάσταση Fedora επιλογή γλώσσας"></p>
+<p>Πατώντας “Continue”, εμφανίζεται απευθείας η σύνοψη της διαδικασίας εγκατάστασης. Δηλαδή τα εξής τρία: η επιλεγμένη γλώσσα/πληκτρολόγιο, η επιλεγμένη ζώνη ώρας και τέλος που θα γίνει η εγκατάσταση. Το μόνο που χρειάζεται είναι να ρυθμίσουμε τα partition για την εγκατάσταση, κάνοντας κλικ στο <strong>Installation Destination</strong>.</p>
+<p><img src="/storage/2022/09/fedora-installation-installation-summary-1024x640.png" alt="Εγκατάσταση Fedora Σύνοψη εγκατάστασης"></p>
+<p>Στην επόμενη οθόνη πρέπει να επιλέξουμε τον δίσκο που θα γίνει η εγκατάσταση αλλά και να δημιουργήσουμε τις κατατμήσεις (partitions). Παρατηρήστε ότι τα κουμπιά επιλογών μετακινήθηκαν στο <strong>επάνω μέρος</strong> της οθόνης. Δεν είναι και τόσο συνηθισμένο σε εγκαταστάτες άλλων διανομών.</p>
+<p><img src="/storage/2022/09/fedora-install-choose-disk-1024x640.png" alt="Εγκατάσταση Fedora επιλογή δίσκου"></p>
+<p>Κατά την επιλογή του σκληρού δίσκου, διαφορετικές επιλογές θα ενεργοποιηθούν στο κάτω μέρος του παραθύρου. Έχουμε την επιλογή να πραγματοποιηθεί η εγκατάσταση αυτόματα. Αυτό που θα κάνει είναι να διαγράψει ολόκληρο το δίσκο για να εγκαταστήσει το Fedora. Είναι καλή επιλογή για τους αρχάριους χρήστες.</p>
+<p><img src="/storage/2022/09/fedora-install-automatic-1024x640.png" alt="Εγκατάσταση Fedora αυτόματος τρόπος κατατμήσεων"></p>
+<p>Οι άλλες δύο είναι οι προσαρμοσμένες επιλογές όπου εμείς οι ίδιοι διαχειριζόμαστε τις κατατμήσεις, αλλάζουμε το μέγεθος του σκληρού δίσκου, διαγράφουμε διαμερίσματα κλπ. Προτείνουμε να μάθετε αυτό τον τρόπο διότι σε περιπτώσεις που πρέπει να εγκαταστήσετε ξανά είτε την διανομή Fedora είτε άλλη διανομή, υπάρχει τρόπος ώστε να μην χρειάζεται να κάνετε ένα αντίγραφο ασφαλείας των αρχείων του δίσκου. Θα εξηγήσουμε παρακάτω.</p>
+<p><img src="/storage/2022/09/fedora-install-custom-1024x640.png" alt="Εγκατάσταση Fedora με προσαρμοσμένο τρόπο κατατμήσεων"></p>
+<p>Δεν παίζει ρόλο τι θα επιλέξετε. Το Blivet-GUI ίσως είναι λίγο πιο εύκολο στην κατανόηση και να μοιάζει με την δημιουργία κατατμήσεων σε άλλες διανομές. Εδώ θα δούμε το απλό Custom.</p>
+<p>Εδώ θα κάνουμε μια παύση για να εξηγήσουμε την λογική των κατατμήσεων στο Linux. Οι κατατμήσεις σε έναν υπολογιστή για απλή χρήση πρέπει να είναι 3.</p>
+<ol>
+<li><strong>Λειτουργικό σύστημα</strong>: Σημείο προσάρτησης είναι το <strong>/</strong> (λέγεται και root). Εδώ εγκαθίσταται όλο το λειτουργικό σύστημα. Ανάλογα με το μέγεθος του δίσκου σας, προτείνεται να είναι περίπου 40GB. Μπορείτε να επιλέξετε σύστημα αρχείων μεταξύ ext4 και btrfs. Το δεύτερο, με κατάλληλες ρυθμίσεις, κρατάει στιγμιότυπα του συστήματος και σας δίνει την δυνατότητα να επαναφέρετε το σύστημα σε περίπτωση εσφαλμένης αναβάθμισης.</li>
+<li><strong>Κατάλογος GPT εάν έχετε ενεργοποιημένο το UEFI</strong>: Σημείο προσάρτησης <strong>/boot/efi</strong> η κατάτμηση αυτή θα έχει μέγεθος 512ΜΒ και σύστημα αρχείων fat32 ενώ ουσιαστικά δεν χρειάζεται να κάνετε κάτι εσείς για το σημείο προσάρτησης και διαμόρφωση. Συνήθως υπάρχει έτοιμη επιλογή. Ίσως να σας παιδέψει λίγο.</li>
+<li><strong>Μνήμη swap</strong>: Η μνήμη αυτή χρησιμοποιείται σε περίπτωση που έχει τελειώσει η φυσική μνήμη του υπολογιστή σας. Ανάλογα με το μέγεθος της φυσικής μνήμης, προτείνεται να είναι το διπλάσιο της φυσικής μνήμης με ανώτερο μέγεθος τα 8GB (πχ 8GB φυσική και 8GB swap). Το σύστημα αρχείων δημιουργείται αυτόματα, όταν επιλέξετε την χρήση ως swap.</li>
+<li><strong>Κατάλογος χρήστη</strong>: Σημείο προσάρτησης είναι το <strong>/home</strong>. Εδώ αποθηκεύονται τα αρχεία των χρηστών του υπολογιστή (σε περίπτωση που είναι πολλοί). Ανάλογα με το μέγεθος του δίσκου σας, αφήστε το υπόλοιπο μέγεθος. Από συστήματα αρχείων μπορείτε να επιλέξετε μεταξύ ext4 και XFS. Ο λόγος δημιουργίας αυτής της κατάτμησης είναι για να ξεχωρίσουμε τα αρχεία του χρήστη από το λειτουργικό σύστημα και να μην χρειάζεται να κάνουμε αντίγραφο ασφαλείας εάν χρειαστεί να κάνουμε επανεγκατάσταση του λειτουργικού ή αν χαλάσει σε κάποια αναβάθμιση.</li>
+</ol>
+<p>Οι κατατμήσεις είναι ήδη χωρισμένες στο παράδειγμά μας. Εσείς θα δείτε έναν δίσκο και πατώντας το <strong>+</strong> θα δημιουργήσετε μια κατάτμηση με τις πληροφορίες που βλέπετε παρακάτω.</p>
+<p>Εδώ βλέπουμε την κατάτμηση με σημείο προσάρτησης το <strong>/</strong>. Μέγεθος έχει περίπου 40GB και σύστημα αρχείων ext4. Παρατηρείστε το σημείο <strong>Reformat</strong>. Εδώ είναι επιλεγμένο. Αυτό σημαίνει ότι θα κάνει διαμόρφωση της κατάτμησης και θα σβήσει ότι έχει.</p>
+<p><img src="/storage/2022/09/fedora-install-partition-root-1024x640.png" alt="Εγκατάσταση Fedora root partition"></p>
+<p>Στην κατάτμηση <strong>/home</strong> παρατηρούμε τις ίδιες ρυθμίσεις. Εδώ αξίζει να σημειώσουμε πάλι την επιλογή <strong>Reformat</strong>. Σε περίπτωση που δεν επιθυμούμε να διαμορφώσουμε την κατάτμηση αυτή με αποτέλεσμα να σβηστούν όλα τα προσωπικά μας αρχεία (Έγγραφα, Εικόνες, Βίντεο, Μουσική κλπ), απλά δεν τσεκάρουμε αυτή την επιλογή.</p>
+<p><img src="/storage/2022/09/fedora-install-partition-home-1024x640.png" alt="Εγκατάσταση Fedora κατάτμηση home"></p>
+<p>Η δημιουργία της μνήμης swap ακολουθεί τον ίδιο τρόπο. Εάν επιλέξετε στο σύστημα αρχείων (File System) την επιλογή swap θα δημιουργηθούν όλα αυτόματα. Το ίδιο και σε περίπτωση που ο υπολογιστής σας διαθέτει GPT.</p>
+<p>Πατήστε το <strong>Done</strong> (βρίσκεται επάνω αριστερά) όταν ολοκληρωθεί η ρύθμιση των κατατμήσεων και θα σας επιστραφεί μια περίληψη των αλλαγών που θα γίνουν στον δίσκο του συστήματός σας.</p>
+<p><img src="/storage/2022/09/fedora-install-partition-changes-1024x640.png" alt="Εγκατάσταση Fedora κατατμήσεις στον δίσκο"></p>
+<p>Και τώρα είστε έτοιμοι να προχωρήσετε στην εγκατάσταση. Πατήστε το <strong>Begin Installation</strong> και περιμένετε.</p>
+<p><img src="/storage/2022/09/fedora-install-ready2install-1024x640.png" alt="Εγκατάσταση Fedora έτοιμοι προς εγκατάσταση"></p>
+<p>Δείτε τα μηνύματα που θα εμφανίζει. Όταν τελειώσει εγκατάσταση, θα σας εμφανίσει προτροπή για ολοκλήρωσης. Πατήστε το μπλε πλήκτρο κάτω δεξιά και επανεκκινήστε τον υπολογιστή σας.</p>
+<p><img src="/storage/2022/10/fedora-installation-complete-1024x640.png" alt="Εγκατάσταση Fedora ολοκληρώθηκε"></p>
+<p>Αφού επανεκκινήσει, θα σας εμφανίσει προτροπή για μερικές ρυθμίσεις. Αυτή που μας ενδιαφέρει είναι το όνομα χρήσης και το συνθηματικό. Αν δεν έχετε κάποιο πρόβλημα, αφήστε όλες τις επιλογές ενεργοποιημένες και πατήστε επόμενο.</p>
+<p><img src="/storage/2022/10/fedora-install-privacy.png" alt="Εγκατάσταση Fedora Ιδιωτικότητα"></p>
+<p>Στην συνέχεια μπορείτε να κάνετε είσοδο στους δικτυακούς σας λογαριασμούς. Αυτό δημιουργεί ένα σελιδοδείκτη στο πρόγραμμα Αρχεία και έχετε πρόσβαση στον δίσκο σας σε αυτές τις υπηρεσίες. Επίσης μπορείτε να έχετε πρόσβαση στο ημερολόγιο αλλά και άλλα πολλά.</p>
+<p><img src="/storage/2022/10/fedora-installation-online-accounts.png" alt="Εγκατάσταση Fedora online accounts"></p>
+<p>Το πιο σημαντικό σημείο είναι εδώ. Πρέπει να εισάγετε το όνομα χρήστη σας καθώς και το πλήρες όνομά σας.</p>
+<p><img src="/storage/2022/10/fedora-installation-username.png" alt="Εγκατάσταση Fedora όνομα χρήστη"></p>
+<p>Και βέβαια ακολουθεί το συνθηματικό σας.</p>
+<p><img src="/storage/2022/10/fedora-installation-password.png" alt="Εγκατάσταση Fedora συνθηματικό">Και είστε έτοιμοι να χρησιμοποιήσετε το σύστημα Fedora.<img src="/storage/2022/10/fedora-installation-ready.png" alt="Εγκατάσταση Fedora ολοκλήρωση"></p>
+<h3>Πρώτες κινήσεις μετά την εγκατάσταση</h3>
+<p>Λόγω της επιμονής του Fedora να αποτελείται μόνο από ελεύθερο λογισμικό και ανοικτό κώδικα, λείπουν από τα αποθετήρια του πολλά προγράμματα (π.χ. VLC, codecs, <a href="https://www.linuxinsider.gr/faq/pos-metatrepo-binteo-me-ffmpeg-gia-transcoding-allagi-megethoys-ypotitlismo-klp">ffmpeg</a>) που είτε είναι ανοικτού κώδικα αλλά η άδεια χρήσης τους δεν “ταιριάζει” με το Fedora είτε έχουν άλλα νομικά προβλήματα. Αυτό όμως δεν σημαίνει ότι δεν μπορούμε εμείς να τα εγκαταστήσουμε. Αρκεί να προσθέσουμε ένα έξτρα αποθετήριο, το RPMFusion, που περιλαμβάνει τέτοια προγράμματα και εφαρμογές.</p>
+<p>Οι εντολές στο τερματικό για την εγκατάσταση/ρύθμιση του RPMFusion είναι:</p>
+<pre><code>sudo dnf update --refresh
+
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+</code></pre>
+<p>Στη συνέχεια μπορούμε να εγκαταστήσουμε όλα τα απαραίτητα multimedia codecs με την εντολή:</p>
+<pre><code>sudo dnf install gstreamer-plugins-base gstreamer1-plugins-base gstreamer-plugins-bad gstreamer-plugins-ugly gstreamer1-plugins-ugly gstreamer-plugins-good-extras gstreamer1-plugins-good gstreamer1-plugins-good-extras gstreamer1-plugins-bad-freeworld
+</code></pre>
+<p>Και τώρα έχουμε ένα ολοκληρωμένο σύστημα με την διανομή Fedora.</p>
+<p>Μπορείτε να βρείτε βοήθεια στο <a href="https://ask.fedoraproject.org/">https://ask.fedoraproject.org/</a> αλλά και στο <a href="https://discussion.fedoraproject.org/">https://discussion.fedoraproject.org</a></p>
+<p>Για άμεση ανταπόκριση, υπάρχει και η <a href="https://t.me/FedoraProjectGreece">Ελληνική Κοινότητα Fedora στο Telegram</a>.</p>
+
+        </div>
+
+        
+        <footer class="entry-footer">
+            <div class="tags-list">
+                <span>Ετικέτες:</span>
+                
+                <span class="tag">fedora</span>
+                
+                <span class="tag">RPMFusion</span>
+                
+                <span class="tag">εγκατάσταση</span>
+                
+            </div>
+        </footer>
+        
+    </div>
+</article>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p>Open Source UoM | Με τη δύναμη του <a href="https://go.dev/" target="_blank">Go</a> και φιλοξενείται στο <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

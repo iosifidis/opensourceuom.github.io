@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Open Source UoM</title>
+    
+    <!-- Meta tags for SEO -->
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="dark-theme">
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="site-logo">
+                    <a href="/" class="brand">
+                        <p class="site-title">Open Source UoM</p>
+                    </a>
+                </div>
+                <nav class="primary-nav">
+                    <ul>
+                        <li><a href="/">ΑΡΧΙΚΗ</a></li>
+                        <li><a href="/blog/">BLOG</a></li>
+                        <li><a href="/xorigoi/">ΧΟΡΗΓΟΙ</a></li>
+                        <li><a href="/register/">ΕΓΓΡΑΦΗ</a></li>
+                        <li><a href="https://my.uom.gr" target="_blank">myUoM</a></li>
+                        <li class="has-children">
+                            <a href="#">ΠΗΓΕΣ <span class="caret">▼</span></a>
+                            <ul class="sub-menu">
+                                <li><a href="https://github.com/open-source-uom">Αποθετήριο Github</a></li>
+                                <li><a href="https://gitlab.com/opensourceuom">Αποθετήριο Gitlab</a></li>
+                                <li><a href="/videos/">Βίντεο</a></li>
+                                <li><a href="/vasikes-entoles-linux/">Βασικές εντολές LINUX</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="content" class="main-content">
+            
+<article class="single-post-container">
+    <div class="container">
+        <header class="entry-header">
+            <h1 class="entry-title">C++ Seminar Part 2: Developing Applications using Qt and diving deep into large codebases</h1>
+            <div class="entry-meta">
+                <span class="author">από Giorgos Fakidis</span>
+                <span class="date">12 Feb 2024</span>
+            </div>
+            
+            <div class="post-cover">
+                <img src="/storage/2024/02/C-By-Open-Source-UoM-and-Qt-Group.jpg" alt="C++ Seminar Part 2: Developing Applications using Qt and diving deep into large codebases" loading="eager">
+            </div>
+            
+        </header>
+
+        <div class="entry-content">
+            <p>Let’s start by making clear what the purpose of this workshop is and how it is organized. The whole seminar <strong>will take place in University of Macedonia</strong>, will last a week (7 days) from which 5 days will be learning and practicing writing C++ and Qt and the weekend will be dedicated to a hackathon that has prizes for the top 3 contestants (more on that later in this article). It is taught by a senior C++ engineer, Tomaz Canabrava, a major KDE contributor since 2004.</p>
+<p>Save the date: 26th-31st of March of 2024 (Last week of March)</p>
+<p>For those already sold on it, they can fill in the form <a href="https://docs.google.com/forms/d/e/1FAIpQLSflFGaa0C_jPXlzVZyfPvQS5V4yZusWbbUq6U0XfNut0qYrBA/viewform?usp=sf_link">https://docs.google.com/forms/d/e/1FAIpQLSflFGaa0C_jPXlzVZyfPvQS5V4yZusWbbUq6U0XfNut0qYrBA/viewform?usp=sf_link</a>.</p>
+<h2>What is Qt and why should I care about it?</h2>
+<p>Qt is a highly performant, cross-platform, graphics library that is being used by companies such as Mercedes, Lufthansa and LG. For someone wanting to dive deeper into it, we have written a whole article about it <a href="/qt-ena-isxiro-ergaleio-gia-tin-anaptiksi-efarmogon/">here</a>. Also, it makes using C++ much easier in terms of developer experience and more productive, abstracting away all the technical details(important nonetheless, but time-consuming)</p>
+<h2>But I am not familiar with C++, can i participate?</h2>
+<p>Of course you can, but you will need to prepare yourself for it appropriately. The part 1 of this seminar has been completed and it has been recorded for people jumping in late on the train. For impatient people ready to dive in, the link for the raw content is <a href="https://drive.google.com/drive/folders/1jmJWSMRiXbm4wjlj1jWEebyN8o8hcTEc?usp=sharing">here</a>. Also, those will also be uploaded to our <a href="https://www.youtube.com/@opensourceuom">Youtube Channel,</a> in a more digestable and convenient format. Next up we will talk about prerequisites, as this is part 2 and not part 1 and some things need to be assumed as already known.</p>
+<h2>Prerequisites</h2>
+<ul>
+<li>Basic Object Oriented Programming principles(in youtube there is plenty of content around the topic, recommended: <a href="https://www.youtube.com/watch?v=SiBw7os-_zI">https://www.youtube.com/watch?v=SiBw7os-_zI</a>)</li>
+<li>Having a working installation of <a href="https://www.qt.io/download">Qt Creator</a>(you can get a licence, signing up with your student email)</li>
+<li>A basic understanding of CMake and a working installation(in the first and second course you can find more details and also <a href="https://cliutils.gitlab.io/modern-cmake/chapters/basics.html">https://cliutils.gitlab.io/modern-cmake/chapters/basics.html</a>)</li>
+<li><a href="https://learn.microsoft.com/en-us/vcpkg/get_started/overview">VCPKG</a> (package manager to add libraries, also explained in the part 1)</li>
+</ul>
+<h2>Hackathon</h2>
+<p>Fix a bug in your favorite open-source Qt/C++ application and win prizes that amount up to 500EUR for the top 3 contestants. The hackathon will be held on the weekend with a duration of around 40hrs, with plenty of code to write, tasty snacks, and of course a lot of caffeine.</p>
+<h2>Course Outline</h2>
+<p><strong>Duration</strong>: 4 days for the Qt Course + 2 days for a hackathon</p>
+<p><strong>Total</strong>: 6 days</p>
+<p><strong>Hours per Day</strong>: 3.5 hours divided in 2 hours lessons, 1 hour student questions(more practical session, writing code, debugging, fixing mistakes)</p>
+<p><strong>Monday:</strong></p>
+<p>– Basic Qt6 Project</p>
+<p>– CMake</p>
+<p>– C++ Recap</p>
+<p>– The Qt Event Loop</p>
+<p>– Signals / Slots</p>
+<p>– Hangman CLI Game with Qt Signals / Slots and Eventloop</p>
+<p><strong>Tuesday</strong>:</p>
+<p>– QML Intro</p>
+<p>– Animations</p>
+<p>– Timers</p>
+<p>– Pong Game</p>
+<p><strong>Wednesday:</strong></p>
+<p>– Classic Widgets</p>
+<p>– QPainter / Semaphore / Clock Example</p>
+<p>– QQuickPaintedItem</p>
+<p>– Mixing QML with Classic Widgets</p>
+<p><strong>Thursday</strong>:</p>
+<p>– Networking (QNetworkAccessManager / QNetworkReply)</p>
+<p>– Image Handling (Change Colors / Access Pixels / Paint)</p>
+<p>– File Handling (QFile / QIODevice)</p>
+<p>– Threads (Resizing a bunch of files in disk)</p>
+<p><strong>Friday:</strong></p>
+<p>– Creating a fully featured music player:</p>
+<p>– VCPKG</p>
+<p>– Integrating External Libraries</p>
+<p>– Using KConfigXT for user configuration</p>
+<p>– Playing Multimedia using Qt (mp3 / videos)</p>
+<p>Finally, if all of this sounds interesting fill in the form <a href="https://docs.google.com/forms/d/e/1FAIpQLSflFGaa0C_jPXlzVZyfPvQS5V4yZusWbbUq6U0XfNut0qYrBA/viewform?usp=sf_link">https://docs.google.com/forms/d/e/1FAIpQLSflFGaa0C_jPXlzVZyfPvQS5V4yZusWbbUq6U0XfNut0qYrBA/viewform?usp=sf_link</a>.</p>
+
+        </div>
+
+        
+        <footer class="entry-footer">
+            <div class="tags-list">
+                <span>Ετικέτες:</span>
+                
+                <span class="tag">C++</span>
+                
+                <span class="tag">KDE</span>
+                
+                <span class="tag">Qt</span>
+                
+                <span class="tag">seminar</span>
+                
+            </div>
+        </footer>
+        
+    </div>
+</article>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p>Open Source UoM | Με τη δύναμη του <a href="https://go.dev/" target="_blank">Go</a> και φιλοξενείται στο <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

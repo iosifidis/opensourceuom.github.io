@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Open Source UoM</title>
+    
+    <!-- Meta tags for SEO -->
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="dark-theme">
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="site-logo">
+                    <a href="/" class="brand">
+                        <p class="site-title">Open Source UoM</p>
+                    </a>
+                </div>
+                <nav class="primary-nav">
+                    <ul>
+                        <li><a href="/">ΑΡΧΙΚΗ</a></li>
+                        <li><a href="/blog/">BLOG</a></li>
+                        <li><a href="/xorigoi/">ΧΟΡΗΓΟΙ</a></li>
+                        <li><a href="/register/">ΕΓΓΡΑΦΗ</a></li>
+                        <li><a href="https://my.uom.gr" target="_blank">myUoM</a></li>
+                        <li class="has-children">
+                            <a href="#">ΠΗΓΕΣ <span class="caret">▼</span></a>
+                            <ul class="sub-menu">
+                                <li><a href="https://github.com/open-source-uom">Αποθετήριο Github</a></li>
+                                <li><a href="https://gitlab.com/opensourceuom">Αποθετήριο Gitlab</a></li>
+                                <li><a href="/videos/">Βίντεο</a></li>
+                                <li><a href="/vasikes-entoles-linux/">Βασικές εντολές LINUX</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="content" class="main-content">
+            
+<article class="single-post-container">
+    <div class="container">
+        <header class="entry-header">
+            <h1 class="entry-title">Πώς να αντιγράψετε το Armbian στο eMMc του Banana-Pi BPi-M5</h1>
+            <div class="entry-meta">
+                <span class="author">από Efstathios Iosifidis</span>
+                <span class="date">17 Nov 2023</span>
+            </div>
+            
+            <div class="post-cover">
+                <img src="/storage/2023/07/banana-pi-logo.png" alt="Πώς να αντιγράψετε το Armbian στο eMMc του Banana-Pi BPi-M5" loading="eager">
+            </div>
+            
+        </header>
+
+        <div class="entry-content">
+            <p>Το <a href="https://wiki.banana-pi.org/Banana_Pi_BPI-M5">Banana-Pi BPi-M5</a> συνοδεύεται από 16 GB ενσωματωμένης κάρτας πολυμέσων (eMMC). Το eMMC είναι χώρος αποθήκευσης που αποτελείται από μνήμη flash NAND και έναν απλό ελεγκτή αποθήκευσης. Επιπλέον, είναι εξαιρετικά γρήγορο.</p>
+<p><img src="/storage/2023/09/Banana_Pi_BPI-M5.jpg" alt=""></p>
+<p>Το <a href="https://armbian.com/?rel=opensource.uom.gr">Armbian</a>, είναι μια δωρεάν έκδοση ανοιχτού κώδικα του Linux που τρέχει σε έναν αριθμό Small Board Computers ( SMC ), προσφέροντας στους χρήστες τη δυνατότητα να χρησιμοποιήσουν το <a href="https://debian.org/?rel=opensource.uom.gr">Debian</a> ή το <a href="https://ubuntu.com/?rel=opensource.uom.gr">Ubuntu</a>. Με την υποστήριξη της κοινότητας, το Armbian προσφέρει ένα ενημερωμένο σύστημα λειτουργίας για πολλά συστήματα.</p>
+<p>Πολλοί χρήστες τείνουν να χρησιμοποιούν μια κάρτα Micro SD επειδή είναι απλή και εύκολη η εγκατάσταση και ρύθμιση ενός νέου SBC. Ωστόσο, χάνουν την ταχύτητα που προσφέρει το <strong><em>eMMC</em></strong>.</p>
+<p>Το <a href="https://banana-pi.org/?rel=opensource.uom.gr">Banana-Pi</a> διαθέτει ένα εργαλείο που μπορεί να ληφθεί και να χρησιμοποιηθεί για την εγγραφή των περισσότερων εικόνων στο χώρο αποθήκευσης eMMC, αλλά τα βήματα εδώ θα σας βοηθήσουν με το Armbian.</p>
+<p>Πρώτα πρέπει να δημιουργηθεί μια κάρτα SC για την εκκίνηση του BPi-M5. Χρησιμοποιήστε μια κάρτα SD με μέγεθος τουλάχιστον 32 GB, για να βεβαιωθείτε ότι υπάρχει αρκετός χώρος για λήψη της εικόνας που θα εγγραφεί στο χώρο αποθήκευσης <strong>eMMC</strong>.</p>
+<p>Μεταβείτε στη σελίδα <a href="https://armbian.com/?rel=opensource.uom.gr">Armbian</a> και επιλέξτε μία από τις εικόνες που προσφέρονται. Κάνοντας κλικ σε αυτόν τον <a href="https://www.armbian.com/bananapi-m5/?rel=opensource.uom.gr">σύνδεσμο</a>, μπορείτε να κάνετε λήψη των εικόνων M5 και M2P.</p>
+<p>Το Rapiberry Imager ή το <a href="https://etcher.balena.io/?rel=opensource.uom.gr">Etcher</a> μπορούν να χρησιμοποιηθούν για την εγγραφή μιας εικόνας σε κάρτα SD.</p>
+<p>Εάν χρησιμοποιείτε μια εικόνα που διαθέτει επιφάνεια εργασίας, ο Firefox μπορεί να χρησιμοποιηθεί για τη λήψη της εικόνας και στη συνέχεια να εγγραφεί στο eMMC.</p>
+<p>Εάν το BPi-M5 εκτελείται με εικόνα με ΜΟΝΟ υποστήριξη γραμμής εντολών, κάντε τα εξής για να λάβετε την εικόνα.</p>
+<p>Εάν μια μικρή εικόνα με ΜΟΝΟ υποστήριξη γραμμής εντολών χρησιμοποιήθηκε για την εκκίνηση του BPi-M5, συνδεθείτε από έναν άλλο κεντρικό υπολογιστή μέσω <strong>ssh</strong>. Ο κεντρικός υπολογιστής που γίνεται ssh από πρέπει να έχει πρόγραμμα περιήγησης, έτσι ώστε ο σύνδεσμος προς την εικόνα να μπορεί να αντιγραφεί για το <strong>wget</strong>. Για να το κάνετε αυτό, τοποθετήστε το δείκτη του ποντικιού πάνω από την “ <strong>Άμεση λήψη</strong>“, κάντε δεξί κλικ και επιλέξτε “ <strong>αντιγραφή συνδέσμου</strong>“. Για αυτό το blog δημοσιεύστε το Debian Bookworm. Θα χρησιμοποιηθεί εικόνα cinnamon</p>
+<pre><code>cd /tmp
+
+wget -O armbian_bookworm_cinnamon.img.xz https://fi.mirror.armbian.de/dl/bananapim5/archive/Armbian_23.8.1_Bananapim5_bookworm_current_6.1.50_cinnamon_desktop.img.xz
+</code></pre>
+<p>Αυτό θα αποθηκεύσει την εικόνα στο /tmp με όνομα, <strong>armbian_bookworm_cinnamon.img.xz</strong> . Προσοχή όμως το /tmp είναι tempfs που σημαίνει ότι η εικόνα θα διαγραφεί μόλις γίνει επανεκκίνηση του BPi-M5. Εάν η εικόνα διατηρείται, αποθηκεύστε την εικόνα σε διαφορετική τοποθεσία.</p>
+<p>Στη συνέχεια, η εικόνα πρέπει να αποσυμπιεστεί, κάτι που μπορεί να γίνει εκτελώντας την παρακάτω εντολή.</p>
+<pre><code>xz -d -v armbian_bookworm_cinnamon.img.xz
+</code></pre>
+<p>Μόλις αποσυμπιεστεί η εικόνα, πρέπει να βρεθεί το <strong><em>eMMC</em></strong>. Αυτό μπορεί να γίνει εκτελώντας το fdisk και βλέποντας στην λίστα τον χώρο αποθήκευσης, εάν δεν επιλεγεί ο σωστός χώρος αποθήκευσης, η κάρτα SD μπορεί να γραφτεί, διαγράφοντας όλα τα περιεχόμενα. Στην παρακάτω εικόνα, δείξτε ότι η κάρτα SD βρίσκεται στο <em>mmcblk0</em> και το <strong><em>eMMC</em></strong> είναι <em>mmcblk1</em>. Αυτό είναι σημαντικό γιατί η επόμενη εντολή θα ξαναγράψει</p>
+<pre><code>sudo fdisk -l
+</code></pre>
+<p>Χρησιμοποιήστε την εντολή <strong>dd</strong> για την εγγραφή της εικόνας στο χώρο αποθήκευσης <strong>eMMC</strong>. Εδώ είναι μερικά πράγματα που πρέπει να καταλάβετε:</p>
+<p>if = το αρχείο εικόνας που θα χρησιμοποιηθεί</p>
+<p>of = ο αποθηκευτικός χώρος για να γράψετε και την εικόνα</p>
+<pre><code>sudo dd if=armbian_bookworm_cinnamon.img of=mmcblk1 bs=10M status=noxfer
+</code></pre>
+<p>Αυτό θα διαγράψει όλα τα δεδομένα σας στο χώρο αποθήκευσης <strong>eMMC</strong> για να εγγραφεί η νέα εικόνα. Θα χρειαστούν μερικά λεπτά, οπότε περιμένετε να επιστρέψει η γραμμή εντολών.</p>
+<p>Μόλις γίνει αυτό. Απενεργοποιήστε το BPi-M5 και αφαιρέστε την κάρτα SD.</p>
+<p><img src="/storage/2023/09/bpi-mi5-ssh.jpg" alt=""></p>
+<p>Το Banana-Pi BPi-M5 εκτελείται τώρα από το χώρο αποθήκευσης <strong>eMMC</strong>.</p>
+<p>Η εκτέλεση του “ <em>fdisk -l</em>” για άλλη μια φορά θα δείξει επίσης ότι το Banana-Pi BPi-M5 εκτελείται από το eMMc.</p>
+<p><img src="/storage/2023/09/bpi-mi5-fdisk.jpg" alt=""></p>
+<p>Είναι ένας απλός και γρήγορος τρόπος για να εκτελείτε το BPi-M5 από το <strong>eMMC</strong>.</p>
+<p>Στο σημείο αυτό θα θέλαμε να ευχαριστήσουμε την <a href="https://www.banana-pi.org/?rel=opensource.uom.gr">Banana Pi</a> για την χορηγία των μικροϋπολογιστών <strong>BPi-M5</strong> στην ομάδα μας. Μας έχουν βοηθήσει αφάνταστα και ήδη τα έχουμε αξιοποιήσει στο έπακρο.</p>
+<p>Εάν θέλετε να συμμετάσχετε και εσείς στην ομάδα μας και να λάβετε μέρος στα project μας, μπορείτε να επικοινωνήσετε στα μέσα κοινωνικής δικτύωσης ή να μας στείλετε ένα mail στο <a href="mailto:linux-team@uom.edu.gr">linux-team@uom.edu.gr</a>.</p>
+
+        </div>
+
+        
+        <footer class="entry-footer">
+            <div class="tags-list">
+                <span>Ετικέτες:</span>
+                
+                <span class="tag">Banana Pi</span>
+                
+                <span class="tag">BPi-M5</span>
+                
+            </div>
+        </footer>
+        
+    </div>
+</article>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p>Open Source UoM | Με τη δύναμη του <a href="https://go.dev/" target="_blank">Go</a> και φιλοξενείται στο <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

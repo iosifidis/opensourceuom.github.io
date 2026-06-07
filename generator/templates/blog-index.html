@@ -1,0 +1,29 @@
+{{ define "content" }}
+<div class="container index-container">
+    <header class="page-header">
+        <h1 class="page-title">Blog</h1>
+        <p class="page-description">Όλα τα άρθρα από το Open Source UoM.</p>
+    </header>
+
+    <div class="post-grid">
+        {{ range .Posts }}
+        <article class="post-card">
+            {{ if .FeaturedImage }}
+            <div class="post-card-image">
+                <a href="/blog/{{ .Slug }}/">
+                    <img src="{{ .FeaturedImage }}" alt="{{ .Title }}" loading="lazy">
+                </a>
+            </div>
+            {{ end }}
+            <div class="post-card-content">
+                <h3 class="post-card-title"><a href="/blog/{{ .Slug }}/">{{ .Title }}</a></h3>
+                <div class="post-card-meta">
+                    {{ if .Date }}<span class="post-date">{{ .Date.Format "02 Jan 2006" }}</span>{{ end }}
+                    {{ if .Author }}<span class="post-author">από {{ .Author }}</span>{{ end }}
+                </div>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

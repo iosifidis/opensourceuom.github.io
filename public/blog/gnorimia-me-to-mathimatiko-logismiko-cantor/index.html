@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Open Source UoM</title>
+    
+    <!-- Meta tags for SEO -->
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="dark-theme">
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="site-logo">
+                    <a href="/" class="brand">
+                        <p class="site-title">Open Source UoM</p>
+                    </a>
+                </div>
+                <nav class="primary-nav">
+                    <ul>
+                        <li><a href="/">ΑΡΧΙΚΗ</a></li>
+                        <li><a href="/blog/">BLOG</a></li>
+                        <li><a href="/xorigoi/">ΧΟΡΗΓΟΙ</a></li>
+                        <li><a href="/register/">ΕΓΓΡΑΦΗ</a></li>
+                        <li><a href="https://my.uom.gr" target="_blank">myUoM</a></li>
+                        <li class="has-children">
+                            <a href="#">ΠΗΓΕΣ <span class="caret">▼</span></a>
+                            <ul class="sub-menu">
+                                <li><a href="https://github.com/open-source-uom">Αποθετήριο Github</a></li>
+                                <li><a href="https://gitlab.com/opensourceuom">Αποθετήριο Gitlab</a></li>
+                                <li><a href="/videos/">Βίντεο</a></li>
+                                <li><a href="/vasikes-entoles-linux/">Βασικές εντολές LINUX</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="content" class="main-content">
+            
+<article class="single-post-container">
+    <div class="container">
+        <header class="entry-header">
+            <h1 class="entry-title">Γνωριμία με το μαθηματικό λογισμικό Cantor</h1>
+            <div class="entry-meta">
+                <span class="author">από Efstathios Iosifidis</span>
+                <span class="date">20 Dec 2023</span>
+            </div>
+            
+            <div class="post-cover">
+                <img src="/storage/2023/08/cantor.png" alt="Γνωριμία με το μαθηματικό λογισμικό Cantor" loading="eager">
+            </div>
+            
+        </header>
+
+        <div class="entry-content">
+            <p>Το <a href="https://cantor.kde.org/?ref=opensource.uom.gr">Cantor</a> είναι ένα λογισμικό για αριθμητικούς υπολογισμούς, ανάλυση δεδομένων και απεικόνιση, που έχει σχεδιαστεί με γνώμονα την παροχή ενός ολοκληρωμένου περιβάλλοντος για επιστημονικούς και μαθηματικούς υπολογισμούς. Το Cantor σαν λογισμικό έχει αναπτυχθεί κυρίως με τη χρήση της πλατφόρμας KDE και είναι διαθέσιμο σε πολλά λειτουργικά συστήματα, όπως Linux, Windows και macOS.</p>
+<h2>Βασικές λειτουργίες του Cantor</h2>
+<p><strong>Υποστήριξη ποικίλων γλωσσών προγραμματισμού:</strong> Το Cantor υποστηρίζει πολλά backends – μαθηματικές γλώσσες προγραμματισμού που χρησιμοποιούνται για την εκτέλεση των εντολών. Επί του παρόντος, το Cantor υποστηρίζει 10 backends – <a href="http://julialang.org/">Julia</a>, <a href="http://edu.kde.org/kalgebra/">KAlgebra</a>, <a href="http://lua.org/">Lua</a>, <a href="http://maxima.sourceforge.net/">Maxima</a>, <a href="https://gnu.org/software/octave/">Octave</a>, <a href="http://python.org/">Python</a>, <a href="http://qalculate.sourceforge.net/">Qalculate</a>, <a href="http://r-project.org/">R</a>, <a href="http://sagemath.org/">Sage</a> και <a href="http://scilab.org/">Scilab</a> – και μπορούν να προστεθούν περισσότερα backend μόνο με την εφαρμογή ενός νέου πρόσθετου Cantor!</p>
+<p><img src="/storage/2023/08/backends.gif" alt="Υποστήριξη ποικίλων γλωσσών προγραμματισμού"></p>
+<p><strong>Διεπαφή ενδείξεων και εκτέλεσης:</strong> Το Cantor σάς επιτρέπει να εκτελείτε εντολές από την αγαπημένη σας μαθηματική γλώσσα προγραμματισμού με τη βοήθεια επισήμανσης σύνταξης και συμπλήρωσης καρτελών για συναρτήσεις, δεσμευμένες λέξεις και μεταβλητές. Δείτε το αποτέλεσμα της εργασίας σας απευθείας μέσα στο φύλλο εργασίας ή εξάγετε σε σημειωματάρια PDF, LaTeX, απλού κειμένου και Jupyter!</p>
+<p><img src="/storage/2023/08/processing.gif" alt="Διεπαφή ενδείξεων και εκτέλεσης"></p>
+<p><strong>Σχεδίαση γραφικών στο φύλλο εργασίας:</strong> Ένα από τα ισχυρά σημεία του Cantor είναι η δημιουργία γραφικών και γραφικών με όμορφη εμφάνιση είναι εύκολη στο Cantor χάρη στις ισχυρές δυνατότητες σχεδίασης. Ανεξάρτητα αν θέλετε να οπτικοποιήσετε ένα μικρό σύνολο αριθμών ή να εργαστείτε με τεράστια ποσά δεδομένων, η Cantor σας καλύπτει.</p>
+<p><img src="/storage/2023/08/plotting.gif" alt="Σχεδίαση γραφικών στο φύλλο εργασίας"></p>
+<p><strong>Γρήγορη διαχείριση μεταβλητών:</strong> Διαχειριστείτε όλες τις μεταβλητές σας από τον ενσωματωμένο πλαϊνό πίνακα. Δείτε τις τιμές, το μέγεθος και τον τύπο των μεταβλητών που χρησιμοποιούνται στο περιβάλλον με μια ματιά. Επιπλέον, είναι δυνατή η αλλαγή των τιμών των μεταβλητών από το πλαϊνό πλαίσιο.</p>
+<p><img src="/storage/2023/08/variables.gif" alt="Γρήγορη διαχείριση μεταβλητών"></p>
+<p><strong>Απόδοση εξόδων σε LaTeX ή Markdown:</strong> Το Cantor σάς επιτρέπει να γράφετε όμορφα κείμενα χρησιμοποιώντας LaTeX ή Markdown. Τώρα το φύλλο εργασίας σας μπορεί να είναι και όμορφο και εύκολο να γραφτεί!</p>
+<p><img src="/storage/2023/08/rendering.gif" alt="Απόδοση εξόδων σε LaTeX ή Markdown"></p>
+<p><strong>Κι αλλα!</strong></p>
+<ul>
+<li>Εύκολη δομή βασισμένη σε πρόσθετα για να προσθέσετε διαφορετικά backend</li>
+<li>Ενσωμάτωση για ανάκτηση και κοινή χρήση φύλλων εργασίας</li>
+<li>Παράθυρα διαλόγου βοηθού που βασίζονται σε πρόσθετα για κοινές εργασίες (όπως η ενσωμάτωση μιας συνάρτησης ή η εισαγωγή μιας μήτρας)</li>
+<li>Ενσωμάτωση της βοήθειας του περιβάλλοντος στη διεπαφή χρήστη</li>
+<li>Πρόγραμμα επεξεργασίας σεναρίων για εργασία με κώδικα μεγάλης κλίμακας</li>
+</ul>
+<p><img src="/storage/2023/08/help.gif" alt=""></p>
+<h2>Πλεονεκτήματα του Cantor</h2>
+<p><strong>Ολοκληρωμένο περιβάλλον:</strong> Το Cantor παρέχει ένα ολοκληρωμένο περιβάλλον για υπολογιστικές εργασίες, επιτρέποντας τη χρήση ποικίλων γλωσσών προγραμματισμού και την απεικόνιση αποτελεσμάτων.</p>
+<p><strong>Επιστημονική ανάλυση δεδομένων:</strong> Είναι ιδανικό για αναλυτικές εργασίες, ανακαλύπτοντας τάσεις και σχέσεις μέσω γραφημάτων και στατιστικών αναλύσεων.</p>
+<p><strong>Εκπαίδευση και μάθηση:</strong> Το Cantor μπορεί να χρησιμοποιηθεί στην τάξη για την εκπαίδευση σε προγραμματισμό και υπολογιστικές σκέψεις, καθώς επιτρέπει την αμεσότητα της εκτέλεσης κώδικα και της παρατήρησης των αποτελεσμάτων.</p>
+<p><strong>Κοινότητα και υποστήριξη:</strong> Είναι μέρος του περιβάλλοντος KDE, που διαθέτει μια ενεργή κοινότητα χρηστών και προγραμματιστών, παρέχοντας υποστήριξη και ανάπτυξη σε αυτό.</p>
+<p>Συνολικά, το Cantor είναι ένα πανίσχυρο εργαλείο για αριθμητικούς υπολογισμούς, ανάλυση δεδομένων και απεικόνιση, που προσφέρει ένα ολοκληρωμένο περιβάλλον για επιστημονικούς και μαθηματικούς υπολογισμούς. Είναι κατάλληλο τόσο για εκπαιδευτικούς σκοπούς όσο και για επαγγελματική έρευνα και ανάλυση δεδομένων.</p>
+<p>Το λογισμικό είναι διαθέσιμο προς λήψη και χρήση στο ιστότοπο <a href="https://cantor.kde.org/">https://cantor.kde.org/</a>. Εάν θέλετε βοήθεια στην εγκατάσταση μπορείτε να επικοινωνήσετε με την ομάδα μας στο <a href="mailto:linux-team@uom.edu.gr">linux-team@uom.edu.gr</a>. Θα χαρούμε να τα πούμε από κοντά.</p>
+
+        </div>
+
+        
+        <footer class="entry-footer">
+            <div class="tags-list">
+                <span>Ετικέτες:</span>
+                
+                <span class="tag">cantor</span>
+                
+                <span class="tag">KDE</span>
+                
+            </div>
+        </footer>
+        
+    </div>
+</article>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p>Open Source UoM | Με τη δύναμη του <a href="https://go.dev/" target="_blank">Go</a> και φιλοξενείται στο <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

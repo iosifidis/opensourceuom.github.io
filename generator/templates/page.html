@@ -1,0 +1,13 @@
+{{ define "content" }}
+<article class="single-page-container">
+    <div class="container">
+        <header class="entry-header">
+            <h1 class="entry-title">{{ .Page.Title }}</h1>
+        </header>
+
+        <div class="entry-content">
+            {{ .Page.Content }}
+        </div>
+    </div>
+</article>
+{{ end }}

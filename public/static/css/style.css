@@ -1,0 +1,358 @@
+:root {
+    --bg-color: #080808;
+    --light-bg: #1a1a1a;
+    --dark-bg: #000000;
+    --text-color: #ffffff;
+    --accent-color: #97c8ff;
+    --accent-hover: #7eb5f5;
+    --btn-primary: #1C47B3;
+    --font-main: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--light-bg);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.primary-nav > ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.primary-nav a {
+    color: var(--text-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.primary-nav a:hover {
+    color: var(--accent-color);
+}
+
+.has-children {
+    position: relative;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--light-bg);
+    min-width: 200px;
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    z-index: 1000;
+    list-style: none;
+}
+
+.has-children:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu li {
+    padding: 5px 20px;
+}
+
+.sub-menu a {
+    text-transform: none;
+    font-size: 14px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 40px 0;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: var(--btn-primary);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+}
+
+/* Index / Welcome */
+.welcome-section {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px 20px;
+    background-color: var(--light-bg);
+    border-radius: 10px;
+}
+
+.page-title {
+    color: var(--btn-primary);
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.page-description {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.section-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Post Grid */
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.post-card {
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+}
+
+.post-card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post-card-content {
+    padding: 20px;
+}
+
+.post-card-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.post-card-title a {
+    color: var(--text-color);
+}
+
+.post-card-title a:hover {
+    color: var(--accent-color);
+}
+
+.post-card-meta {
+    font-size: 13px;
+    color: #999;
+    display: flex;
+    justify-content: space-between;
+}
+
+.view-all-wrapper {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Single Post */
+.single-post-container .entry-header {
+    margin-bottom: 40px;
+}
+
+.single-post-container .entry-title {
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.single-post-container .entry-meta {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.post-cover {
+    margin-bottom: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.entry-content {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.entry-content p {
+    margin-bottom: 20px;
+}
+
+.entry-content h2, .entry-content h3 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.entry-content ul, .entry-content ol {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.entry-content figure {
+    margin: 30px 0;
+}
+
+.entry-content figcaption {
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+    margin-top: 10px;
+}
+
+.tags-list {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid var(--light-bg);
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--light-bg);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 13px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* Single Page */
+.single-page-container .entry-title {
+    color: var(--btn-primary);
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--dark-bg);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .primary-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .single-post-container .entry-title {
+        font-size: 28px;
+    }
+}

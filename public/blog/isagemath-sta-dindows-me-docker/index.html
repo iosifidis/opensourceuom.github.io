@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Open Source UoM</title>
+    
+    <!-- Meta tags for SEO -->
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="dark-theme">
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="site-logo">
+                    <a href="/" class="brand">
+                        <p class="site-title">Open Source UoM</p>
+                    </a>
+                </div>
+                <nav class="primary-nav">
+                    <ul>
+                        <li><a href="/">ΑΡΧΙΚΗ</a></li>
+                        <li><a href="/blog/">BLOG</a></li>
+                        <li><a href="/xorigoi/">ΧΟΡΗΓΟΙ</a></li>
+                        <li><a href="/register/">ΕΓΓΡΑΦΗ</a></li>
+                        <li><a href="https://my.uom.gr" target="_blank">myUoM</a></li>
+                        <li class="has-children">
+                            <a href="#">ΠΗΓΕΣ <span class="caret">▼</span></a>
+                            <ul class="sub-menu">
+                                <li><a href="https://github.com/open-source-uom">Αποθετήριο Github</a></li>
+                                <li><a href="https://gitlab.com/opensourceuom">Αποθετήριο Gitlab</a></li>
+                                <li><a href="/videos/">Βίντεο</a></li>
+                                <li><a href="/vasikes-entoles-linux/">Βασικές εντολές LINUX</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="content" class="main-content">
+            
+<article class="single-post-container">
+    <div class="container">
+        <header class="entry-header">
+            <h1 class="entry-title">Εγκατάσταση SageMath με χρήση Docker σε Windows</h1>
+            <div class="entry-meta">
+                <span class="author">από Efstathios Iosifidis</span>
+                <span class="date">18 Oct 2025</span>
+            </div>
+            
+            <div class="post-cover">
+                <img src="/storage/2025/10/sagemath_logo.png" alt="Εγκατάσταση SageMath με χρήση Docker σε Windows" loading="eager">
+            </div>
+            
+        </header>
+
+        <div class="entry-content">
+            <h3><strong>Επισκόπηση της διαδικασίας</strong></h3>
+<p>Για να τρέξετε το SageMath σε ένα Docker container στα Windows, θα ακολουθήσουμε μια σύγχρονη προσέγγιση που αξιοποιεί το <strong>Windows Subsystem for Linux (WSL) 2</strong>. Το WSL 2 επιτρέπει την εκτέλεση ενός πραγματικού πυρήνα Linux απευθείας στα Windows, προσφέροντας εξαιρετική απόδοση για εργαλεία όπως το Docker.</p>
+<p>Η διαδικασία περιλαμβάνει τρία κύρια βήματα:</p>
+<ol>
+<li><strong>Εγκατάσταση του WSL 2</strong>: Το υπόβαθρο που απαιτείται για να τρέξει το Docker Desktop αποδοτικά.</li>
+<li><strong>Εγκατάσταση του Docker Desktop</strong>: Το εργαλείο που θα διαχειρίζεται τα containers.</li>
+<li><strong>Εκτέλεση του SageMath container</strong>: Η λήψη και η εκκίνηση του SageMath.</li>
+</ol>
+<hr>
+<h3><strong>Βήμα 1: Εγκατάσταση του Windows Subsystem for Linux (WSL)</strong></h3>
+<p>Η Microsoft έχει απλοποιήσει σημαντικά την εγκατάσταση του WSL.</p>
+<ol>
+<li>
+<p><strong>Ανοίξτε το PowerShell ως Διαχειριστής</strong>:</p>
+<ul>
+<li>
+<p>Πατήστε το πλήκτρο Windows, πληκτρολογήστε “PowerShell”, κάντε δεξί κλικ στο “Windows PowerShell” και επιλέξτε “Εκτέλεση ως διαχειριστής”.</p>
+</li>
+<li>
+<p><strong>Εκτελέστε την εντολή εγκατάστασης</strong>:</p>
+<ul>
+<li>Στο παράθυρο του PowerShell, πληκτρολογήστε την παρακάτω εντολή και πατήστε Enter:</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><code>wsl --install</code>
+- Αυτή η εντολή θα ενεργοποιήσει αυτόματα τις απαραίτητες δυνατότητες των Windows (όπως την “Πλατφόρμα εικονικής μηχανής”), θα κατεβάσει τον πιο πρόσφατο πυρήνα Linux, θα εγκαταστήσει το WSL 2 και θα ορίσει το Ubuntu ως την προεπιλεγμένη διανομή Linux.
+2. <strong>Επανεκκινήστε τον υπολογιστή σας</strong>:</p>
+<ul>
+<li>Μετά την ολοκλήρωση της διαδικασίας, θα σας ζητηθεί να επανεκκινήσετε τον υπολογιστή σας.</li>
+</ul>
+<ol start="3">
+<li>
+<p><strong>Ρύθμιση του Linux (Ubuntu)</strong>:</p>
+<ul>
+<li>Μετά την επανεκκίνηση, θα ανοίξει αυτόματα ένα παράθυρο τερματικού του Ubuntu. Θα σας ζητηθεί να δημιουργήσετε ένα όνομα χρήστη και έναν κωδικό πρόσβασης. Αυτά τα στοιχεία είναι για το περιβάλλον Linux και δεν χρειάζεται να είναι τα ίδια με τα στοιχεία σύνδεσης των Windows.</li>
+</ul>
+</li>
+</ol>
+<p>Με την ολοκλήρωση αυτού του βήματος, έχετε ένα πλήρες περιβάλλον Linux που τρέχει μέσα στα Windows σας.</p>
+<hr>
+<h3><strong>Βήμα 2: Εγκατάσταση του Docker Desktop</strong></h3>
+<p>Το Docker Desktop για Windows θα χρησιμοποιήσει το WSL 2 που μόλις εγκαταστήσατε για να τρέχει τα containers.</p>
+<ol>
+<li>
+<p><strong>Προαπαιτούμενα</strong>:</p>
+<ul>
+<li>Βεβαιωθείτε ότι η εικονικοποίηση (virtualization) είναι ενεργοποιημένη στο BIOS του υπολογιστή σας. Οι περισσότεροι σύγχρονοι υπολογιστές την έχουν ενεργοποιημένη από προεπιλογή.</li>
+</ul>
+</li>
+<li>
+<p><strong>Λήψη του Docker Desktop</strong>:</p>
+<ul>
+<li>Κατεβάστε το πρόγραμμα εγκατάστασης από την επίσημη ιστοσελίδα του Docker: <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop for Windows</a>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Εκτέλεση του προγράμματος εγκατάστασης</strong>:</p>
+<ul>
+<li>Ανοίξτε το αρχείο .exe που κατεβάσατε.</li>
+<li>Κατά τη διάρκεια της εγκατάστασης, βεβαιωθείτε ότι η επιλογή “Use WSL 2 instead of Hyper-V” είναι επιλεγμένη. Ακολουθήστε τις οδηγίες στην οθόνη για να ολοκληρώσετε την εγκατάσταση.</li>
+</ul>
+</li>
+<li>
+<p><strong>Επανεκκίνηση (αν απαιτείται)</strong>:</p>
+<ul>
+<li>Το πρόγραμμα εγκατάστασης μπορεί να ζητήσει επανεκκίνηση των Windows.</li>
+</ul>
+</li>
+<li>
+<p><strong>Εκκίνηση και επαλήθευση του Docker</strong>:</p>
+<ul>
+<li>Μετά την εγκατάσταση, εκκινήστε το Docker Desktop από το μενού Έναρξη.Ανοίξτε ένα νέο παράθυρο PowerShell (δεν χρειάζεται να είναι ως διαχειριστής αυτή τη φορά) και εκτελέστε την παρακάτω εντολή για να βεβαιωθείτε ότι όλα λειτουργούν σωστά:</li>
+</ul>
+</li>
+</ol>
+<p><code>docker run hello-world</code></p>
+<ul>
+<li>Αν η εγκατάσταση είναι επιτυχής, θα δείτε ένα μήνυμα που ξεκινά με “Hello from Docker!”.</li>
+</ul>
+<hr>
+<h3><strong>Βήμα 3: Εκτέλεση του SageMath Container και Χρήση Volume</strong></h3>
+<p>Τώρα που το Docker είναι έτοιμο, μπορείτε να κατεβάσετε και να τρέξετε την επίσημη εικόνα (image) του SageMath.</p>
+<h4><strong>Να κάνω Volume ή όχι;</strong></h4>
+<p><strong>Ναι, οπωσδήποτε.</strong> Ένα volume συνδέει έναν φάκελο από τον υπολογιστή σας (Windows) με έναν φάκελο μέσα στο container. Αυτό είναι κρίσιμο για τους εξής λόγους:</p>
+<ul>
+<li><strong>Μονιμότητα (Persistence)</strong>: Οτιδήποτε αποθηκεύετε μέσα στο container χάνεται όταν το container διαγραφεί. Χρησιμοποιώντας ένα volume, τα αρχεία σας (π.χ., τα Jupyter notebooks) αποθηκεύονται απευθείας στον σκληρό σας δίσκο στα Windows και παραμένουν εκεί ακόμα και αν σταματήσετε ή διαγράψετε το container.</li>
+<li><strong>Ευκολία πρόσβασης</strong>: Μπορείτε να έχετε πρόσβαση και να επεξεργαστείτε τα αρχεία σας με τα συνήθη εργαλεία των Windows (π.χ., Visual Studio Code, Notepad++), καθώς αυτά βρίσκονται στο σύστημα αρχείων σας.</li>
+</ul>
+<h4><strong>Η τελική εντολή</strong></h4>
+<ol>
+<li>
+<p><strong>Δημιουργήστε έναν φάκελο στα Windows</strong>:</p>
+<ul>
+<li>Δημιουργήστε έναν φάκελο όπου θέλετε να αποθηκεύονται τα αρχεία του SageMath. Για παράδειγμα, C:\Users\ΤοΟνομαΣας\Documents\SageMath.</li>
+</ul>
+</li>
+<li>
+<p><strong>Εκτελέστε την εντολή στο PowerShell</strong>:</p>
+<ul>
+<li>Ανοίξτε το PowerShell και εκτελέστε την παρακάτω εντολή. Αντικαταστήστε το C:\Users\ΤοΟνομαΣας\Documents\SageMath με την πλήρη διαδρομή του φακέλου που δημιουργήσατε.</li>
+</ul>
+</li>
+</ol>
+<p><code>docker run -p 8888:8888 -v C:\Users\ΤοΟνομαΣας\Documents\SageMath:/home/sage/work -it sagemath/sagemath</code></p>
+<h4><strong>Ανάλυση της εντολής:</strong></h4>
+<ul>
+<li>docker run: Η βασική εντολή για να δημιουργήσετε και να ξεκινήσετε ένα νέο container.</li>
+<li>-p 8888:8888: Κάνει “mapping” τη θύρα (port) 8888 του container στη θύρα 8888 του υπολογιστή σας. Αυτό σας επιτρέπει να συνδεθείτε στο Jupyter Notebook που τρέχει μέσα στο container.</li>
+<li>-v C:\Users\ΤοΟνομαΣας\Documents\SageMath:/home/sage/work: Αυτό είναι το <strong>volume</strong>. Συνδέει τον φάκελο C:\… των Windows με τον φάκελο /home/sage/work μέσα στο container.</li>
+<li>-it: Συνδέει το τερματικό σας με το τερματικό του container, επιτρέποντάς σας να αλληλεπιδράτε μαζί του.</li>
+<li>sagemath/sagemath: Το όνομα της επίσημης εικόνας του SageMath που θα χρησιμοποιηθεί.[ <a href="https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFByTjsjaKY7H9fnHwwla_iUU3JfrVfIEftmodn1dF_2LgfO3bGZYiSKhT4BDe5v7Icc8PxYTvHQWltSust2ShqaeyXehZAYrxy-Aenu1GKYzRev53XWUIDPFmnvS6w3OLcPl6T">8</a>] Το Docker θα την κατεβάσει αυτόματα αν δεν υπάρχει ήδη στον υπολογιστή σας.</li>
+</ul>
+<h3><strong>Τι να περιμένετε μετά την εκτέλεση της εντολής</strong></h3>
+<ol>
+<li>Το Docker θα κατεβάσει την εικόνα του SageMath (αυτό μπορεί να διαρκέσει λίγο, ανάλογα με την ταχύτητα της σύνδεσής σας).</li>
+<li>Μόλις ολοκληρωθεί, θα βρεθείτε μέσα στο περιβάλλον γραμμής εντολών του SageMath μέσα στο container.</li>
+<li>Για να ξεκινήσετε το περιβάλλον JupyterLab, πληκτρολογήστε την παρακάτω εντολή μέσα στο τερματικό του container: <code>sage -n jupyterlab --ip=0.0.0.0</code></li>
+<li>Το τερματικό θα σας εμφανίσει μία ή περισσότερες διευθύνσεις URL (θα μοιάζουν με http://127.0.0.1:8888/lab?token=…). Αντιγράψτε μία από αυτές τις διευθύνσεις και επικολλήστε την στον browser σας.</li>
+<li>Θα ανοίξει το περιβάλλον του JupyterLab. Στην αριστερή πλευρά, θα δείτε τον φάκελο work, ο οποίος είναι ο φάκελος που συνδέσατε από τα Windows. Οποιοδήποτε αρχείο δημιουργήσετε εδώ, θα αποθηκευτεί απευθείας στον φάκελο C:\Users\ΤοΟνομαΣας\Documents\SageMath.</li>
+</ol>
+<p>Για οποιαδήποτε απορία, μπορείτε να μας στείλετε mail στο <a href="mailto:opensource@uom.edu.gr">opensource@uom.edu.gr</a></p>
+
+        </div>
+
+        
+        <footer class="entry-footer">
+            <div class="tags-list">
+                <span>Ετικέτες:</span>
+                
+                <span class="tag">Docker</span>
+                
+                <span class="tag">SageMath</span>
+                
+            </div>
+        </footer>
+        
+    </div>
+</article>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p>Open Source UoM | Με τη δύναμη του <a href="https://go.dev/" target="_blank">Go</a> και φιλοξενείται στο <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Βασικές εντολές του GNU/LINUX - Open Source UoM</title>
+    
+    <!-- Meta tags for SEO -->
+    
+    
+    
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="dark-theme">
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="site-logo">
+                    <a href="/" class="brand">
+                        <p class="site-title">Open Source UoM</p>
+                    </a>
+                </div>
+                <nav class="primary-nav">
+                    <ul>
+                        <li><a href="/">ΑΡΧΙΚΗ</a></li>
+                        <li><a href="/blog/">BLOG</a></li>
+                        <li><a href="/xorigoi/">ΧΟΡΗΓΟΙ</a></li>
+                        <li><a href="/register/">ΕΓΓΡΑΦΗ</a></li>
+                        <li><a href="https://my.uom.gr" target="_blank">myUoM</a></li>
+                        <li class="has-children">
+                            <a href="#">ΠΗΓΕΣ <span class="caret">▼</span></a>
+                            <ul class="sub-menu">
+                                <li><a href="https://github.com/open-source-uom">Αποθετήριο Github</a></li>
+                                <li><a href="https://gitlab.com/opensourceuom">Αποθετήριο Gitlab</a></li>
+                                <li><a href="/videos/">Βίντεο</a></li>
+                                <li><a href="/vasikes-entoles-linux/">Βασικές εντολές LINUX</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="content" class="main-content">
+            
+<article class="single-page-container">
+    <div class="container">
+        <header class="entry-header">
+            <h1 class="entry-title">Βασικές εντολές του GNU/LINUX</h1>
+        </header>
+
+        <div class="entry-content">
+            <p>Εδώ θα δούμε κάποιες βασικές εντολές τερματικού</p>
+<h2><strong>Διαχείριση αρχείων</strong></h2>
+<p><strong>ls</strong>Παρουσίαση των αρχείων ενός καταλόγου<strong>cd dir</strong>μετάβαση στο κατάλογο dir<strong>pwd</strong>εμφάνιση του ενεργού καταλόγου<strong>mkdir dir</strong>δημιουργία καταλόγου με το όνομα dir<strong>rm file</strong>διαγραφή του αρχείου file<strong>rmdir dir</strong>διαγραφή του καταλόγου dir<strong>cp file1 file2</strong>αντιγραφή του αρχείου file1 στο αρχείο file2<strong>mv file1 file2</strong>μετακίνηση ( ή μετονομασία) του αρχείου file1 στο αρχείο file2<strong>ln -s file link</strong>δημιουργία συμβολικού συνδέσμου link στο αρχείο file<strong>touch file</strong>δημιουργία ή ανανέωση του αρχείου file<strong>cat file</strong>εμφάνιση των περιεχομένων του αρχείου file<strong>less file</strong>εμφάνιση των περιεχομένων του αρχείου file (μετακίνηση στο αρχείο με έλεγχο του χρήστη)<strong>head file</strong>εμφάνιση των πρώτων γραμμών του αρχείου file<strong>tail file</strong>εμφάνιση των τελευταίων γραμμών του αρχείου file<strong>tail -f file</strong>συνεχής εμφάνιση των περιεχομένων του αρχείου file καθώς αυτό μεγαλώνει</p>
+<h2><strong>Ανακατευθύνσεις</strong></h2>
+<p><em><strong>command</strong></em> <strong>&gt;</strong> <em><strong>file</strong><em>ανακατεύθυνση της εξόδου μιας εντολής <em>command</em> στο αρχείο <em>file</em></em><strong>command&gt;&gt;file</strong><em>ανακατεύθυνση της εξόδου μιας εντολής <em>command</em> στο τέλος του αρχείου <em>file</em> χωρίς διαγραφή των προηγούμενων περιεχομένων</em><strong>command1</strong></em> <strong>|</strong> _<strong>command2</strong>_επεξεργασία της εξόδου της εντολής <em>command1</em> με χρήση της εντολής <em>command2</em></p>
+<h2><strong>Πληροφορίες συστήματος</strong></h2>
+<p><strong>date</strong>εμφάνιση της τρέχουσας ώρας και ημέρας στο σύστημα<strong>cal</strong>εμφάνιση ημερολογίου για τον τρέχον μήνα<strong>uptime</strong>εμφάνιση του χρόνου λειτουργίας<strong>uname -a</strong>εμφάνιση έκδοσης του πυρήνα<strong>cat /proc/cpuinfo</strong>εμφάνιση πληροφοριών CPU<strong>cat /proc/meminfo</strong>εμφάνιση πληροφοριών μνήμης<strong>df</strong>εμφάνιση χρήσης δίσκων σε χωρητικότητα<strong>du</strong>εμφάνιση χρήσης χώρου καταλόγων<strong>free</strong>εμφάνιση χρήσης μνήμης και swap<strong>which</strong> _<strong>app</strong>_εμφάνιση του ακριβούς εκτελέσιμου app που καλεί το σύστημα<strong>file</strong> _<strong>filename</strong>_εμφάνιση του τύπου αρχείου του filename</p>
+<h2><strong>Προσάρτηση συσκευών αποθήκευσης</strong></h2>
+<p><strong>mount</strong> _<strong>/dev/sdxX /mnt/mountpoint</strong>_προσάρτηση της συσκευής <em>/dev/sdxX</em> στο <em>/mnt/mountpoint</em>(απαιτεί δικαιώματα υπερχρήστη)<strong>pmount</strong> _<strong>/dev/sdxX</strong>_προσάρτηση της συσκευής <em>/dev/sdxX</em></p>
+<p>(εξωτερικό πρόγραμμα)</p>
+<h2><strong>Διαχείριση διεργασιών</strong></h2>
+<p><strong>ps</strong>εμφάνιση των ενεργών διεργασιών του χρήστη σας τη παρούσα στιγμή<strong>top</strong>εμφάνιση όλων των διεργασιών<strong>kill</strong> _<strong>pid</strong>_αναγκαστικό κλείσιμο της διεργασίας με αυτό το <em>pid</em><strong>killall</strong> _<strong>name</strong>_αναγκαστικό κλείσιμο όλων των διεργασιών με όνομα <em>name</em><strong>htop</strong>ολοκληρωμένη διαχείριση εργασιών (εξωτερικό πρόγραμμα)</p>
+<h2><strong>Δικαιώματα αρχείων</strong></h2>
+<p><strong>chmod</strong> _<strong>octal file</strong>_αλλαγή των δικαιωμάτων του αρχείου file σε octal, το <em>octal</em> είναι ένα τριψήφιο νούμερο που καθένα από τα ψηφία του συμβολίζει με τη σειρά το χρήστη, το group και όλους τους χρήστες και με πρόσθεση των ακόλουθων:</p>
+<p>\* 4 ανάγνωση (r)</p>
+<p>\* 2 γραφή (w)</p>
+<p>\* 1 εκτέλεση (x)</p>
+<p>παραδείγματα:</p>
+<p><strong>chmod 777</strong>– δικαιώματα rwx για όλους</p>
+<p><strong>chmod640</strong>– δικαιώματα rw για τον ιδιοκτήτη, r για το group και καμία πρόσβαση για όλους τους υπόλοιπους<strong>chmod</strong> <em><strong>user</strong></em> <strong>:</strong> _<strong>group file</strong>_αλλαγή της ιδιοκτησίας ενός αρχείου <em>file</em> στο χρήστη <em>user</em> και την ομάδα <em>group</em></p>
+<h2><strong>Αναζήτηση</strong></h2>
+<p><strong>grep</strong> _<strong>pattern files</strong>_αναζήτηση ενός όρου <em>pattern</em> στα αρχεία <em>files</em><strong>locate</strong> _<strong>file</strong>_εντοπισμός όλων των υφιστάμενων αντιγράφων ενός αρχείου (χρήση της βάσης δεδομένων αρχείων του συστήματος)<strong>find</strong> <em><strong>dir</strong></em> <strong>-name</strong> _<strong>file</strong>_εντοπισμός όλων των αρχείων με όνομα <em>file</em> στο κατάλογο <em>dir</em> (άμεση αναζήτηση)</p>
+<h2><strong>Συμπίεση</strong></h2>
+<p><strong>gzip</strong> _<strong>file</strong>_συμπίεση ενός αρχείου <em>file</em> στο <em>file.gz</em><strong>bzip2</strong> _<strong>file</strong>_συμπίεση ενός αρχείου <em>file</em> στο <em>file.bz2</em><strong>xz</strong> _<strong>file</strong>_συμπίεση ενός αρχείου <em>file</em> στο <em>file.xz</em><strong>gunzip</strong> _<strong>file.gz</strong>_αποσυμπίεση ενός αρχείου <em>file.gz</em><strong>bunzip2</strong> _<strong>file.bz2</strong>_αποσυμπίεση ενός αρχείου <em>file.bz2</em><strong>xzdec</strong> _<strong>file.xz</strong>_αποσυμπίεση ενός αρχείου <em>file.xz</em><strong>tar cvzf</strong> _<strong>file.tar.gz files</strong>_δημιουργία αρχείου tar με όνομα <em>ile.tar.gz</em> που θα περιέχει τα αρχεία <em>files</em>(συμπίεση gzip)<strong>tar cvjf</strong> _<strong>file.tar.bz2 files</strong>_δημιουργία αρχείου tar με όνομα <em>file.tar.bz2</em> που θα περιέχει τα αρχεία <em>files</em>(συμπίεση bzip2)<strong>tar cv</strong> <strong>files</strong> <strong>| xz</strong> _<strong>file.tar.xz</strong>_δημιουργία αρχείου tar με όνομα <em>file.tar.xz</em> που θα περιέχει τα αρχεία <em>files</em>(συμπίεση xz)<strong>tarxf</strong> _<strong>file.tar.{gz,bz2,xz,…}</strong>_αποσυμπίεση του αρχείου <em>file.tar.</em></p>
+<p>_{gz,bz2,xz,…}__<strong>tartffile.tar.{gz,bz2,xz,…}</strong>_εικονική αποσυμπίεση του αρχείου</p>
+<p><em>file.tar.{gz,bz2,xz,…}</em><strong>zip -r</strong> _<strong>file.zip files</strong>_συμπίεση των αρχείων <em>files</em> στο <em>file.zip</em><strong>unzip</strong> _<strong>file.zip</strong>_αποσυμπίεση του αρχείου <em>file.zip</em></p>
+<h2><strong>Δικτύωση</strong></h2>
+<p><strong>ping</strong> _<strong>host</strong>_ping (επικοινωνία) με ένα εξυπηρετητή <em>host</em> και εμφάνιση αποτελέσματος<strong>traceroute</strong> _<strong>host</strong><em>εμφάνιση της πορείας των πακέτων στο δίκτυο κατά την επικοινωνία με τον εξηπηρετητή <em>host</em></em><strong>wget URL</strong>_<em>κατέβασμα του αρχείου που βρίσκεται στο URL</em></p>
+<h2><strong>SSH</strong></h2>
+<p><strong>ssh</strong> <em><strong>user</strong></em> <strong>@</strong> _<strong>host</strong>_σύνδεση με τον διακομιστή <em>host</em> ως χρήστης</p>
+<p><em>user</em><strong>ssh-copy-id</strong> <em><strong>user</strong></em> <strong>@</strong> _<strong>host</strong>_προσθήκη του κλειδιού σας στον διακομιστή <em>host</em> για το χρήστη <em>user</em> ώστε να ενεργοποιηθεί ή είσοδος με την χρήση του κλειδιού χωρίς κωδικό</p>
+<h2><strong>Συντομεύσεις</strong></h2>
+<p><strong>Ctrl+C</strong>παύση της τρέχουσας εντολής<strong>Ctrl+Z</strong>σταμάτημα της τρέχουσας εντολής, επανέναρξη με <strong>fg</strong></p>
+<p>για το foreground ή <strong>bg</strong> για το background<strong>Ctrl+W</strong>διαγραφή μιας λέξης στη τρέχουσα γραμμή<strong>Ctrl+U</strong>διαγραφή ολόκληρης της γραμμής<strong>Ctrl+R</strong>πρόσφατες εντολές</p>
+<h2><strong>Διάφορα</strong></h2>
+<p><strong>alias</strong> _<strong>myalias=”command”</strong>_<em>δημιουργία του ψευδώνυμου myalias για την εντολή command</em> που εισάγεται στο αρχείο .bashrc<strong>man</strong> <strong>command</strong>εμφανίζει στην οθόνη την περιγραφή και οδηγίες σχετικά µε</p>
+<p>κάποια από τις εντολές του συστήµατος<strong>passwd</strong>αλλάζει το συνθηματικό (password) ενός χρήστη</p>
+
+        </div>
+    </div>
+</article>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p>Open Source UoM | Με τη δύναμη του <a href="https://go.dev/" target="_blank">Go</a> και φιλοξενείται στο <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
