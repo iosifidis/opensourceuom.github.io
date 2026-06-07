@@ -151,8 +151,8 @@ func (g *Generator) Generate() error {
 
 	// Only show 4 recent posts on home page
 	recentPosts := g.Posts
-	if len(recentPosts) > 4 {
-		recentPosts = recentPosts[:4]
+	if len(recentPosts) > 6 {
+		recentPosts = recentPosts[:6]
 	}
 
 	if err := g.renderTemplate(filepath.Join(g.OutputDir, "index.html"), "index.html", map[string]interface{}{
