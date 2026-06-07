@@ -4,8 +4,8 @@
         <h1 class="page-title">Καλώς ήρθατε στο Open Source UoM</h1>
         <p class="page-description">Η κοινότητα ανοιχτού κώδικα του Πανεπιστημίου Μακεδονίας.</p>
         <div class="hero-actions">
-            <a href="/register/" class="btn btn-primary">Γίνε μέλος</a>
-            <a href="/blog/" class="btn btn-secondary">Διάβασε τα άρθρα μας</a>
+            <a href="{{ .BaseURL }}register/" class="btn btn-primary">Γίνε μέλος</a>
+            <a href="{{ .BaseURL }}blog/" class="btn btn-secondary">Διάβασε τα άρθρα μας</a>
         </div>
     </div>
 
@@ -16,13 +16,13 @@
             <article class="post-card">
                 {{ if .FeaturedImage }}
                 <div class="post-card-image">
-                    <a href="/blog/{{ .Slug }}/">
-                        <img src="{{ .FeaturedImage }}" alt="{{ .Title }}" loading="lazy">
+                    <a href="{{ $.BaseURL }}blog/{{ .Slug }}/">
+                        <img src="{{ $.BaseURL }}{{ .FeaturedImage }}" alt="{{ .Title }}" loading="lazy">
                     </a>
                 </div>
                 {{ end }}
                 <div class="post-card-content">
-                    <h3 class="post-card-title"><a href="/blog/{{ .Slug }}/">{{ .Title }}</a></h3>
+                    <h3 class="post-card-title"><a href="{{ $.BaseURL }}blog/{{ .Slug }}/">{{ .Title }}</a></h3>
                     <div class="post-card-meta">
                         {{ if .Date }}<span class="post-date">{{ .Date.Format "02 Jan 2006" }}</span>{{ end }}
                         {{ if .Author }}<span class="post-author">από {{ .Author }}</span>{{ end }}
@@ -32,7 +32,7 @@
             {{ end }}
         </div>
         <div class="view-all-wrapper">
-            <a href="/blog/" class="btn btn-outline">Όλα τα άρθρα</a>
+            <a href="{{ .BaseURL }}blog/" class="btn btn-outline">Όλα τα άρθρα</a>
         </div>
     </section>
 </div>

@@ -9,7 +9,7 @@
             </div>
             {{ if .Post.FeaturedImage }}
             <div class="post-cover">
-                <img src="{{ .Post.FeaturedImage }}" alt="{{ .Post.Title }}" loading="eager">
+                <img src="{{ $.BaseURL }}{{ .Post.FeaturedImage }}" alt="{{ .Post.Title }}" loading="eager">
             </div>
             {{ end }}
         </header>

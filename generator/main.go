@@ -16,7 +16,12 @@ func main() {
 
 	fmt.Println("Starting Open Source UoM Static Site Generator...")
 
-	gen, err := NewGenerator(inputDir, outputDir, templatesDir)
+	baseURL := os.Getenv("BASE_URL")
+	if baseURL == "" {
+		baseURL = "/"
+	}
+
+	gen, err := NewGenerator(inputDir, outputDir, templatesDir, baseURL)
 	if err != nil {
 		fmt.Printf("Error initializing generator: %v\n", err)
 		os.Exit(1)

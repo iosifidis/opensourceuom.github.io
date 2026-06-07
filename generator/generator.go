@@ -16,10 +16,11 @@ type Generator struct {
 	Templates *template.Template
 	Posts     []*Post
 	Pages     []*Post
+	BaseURL   string
 }
 
 // NewGenerator creates a new Generator instance
-func NewGenerator(inputDir, outputDir, templatesDir string) (*Generator, error) {
+func NewGenerator(inputDir, outputDir, templatesDir, baseURL string) (*Generator, error) {
 	// Parse all HTML templates
 	tmplPattern := filepath.Join(templatesDir, "*.html")
 	tmpl, err := template.ParseGlob(tmplPattern)
@@ -33,6 +34,7 @@ func NewGenerator(inputDir, outputDir, templatesDir string) (*Generator, error) 
 		Templates: tmpl,
 		Posts:     []*Post{},
 		Pages:     []*Post{},
+		BaseURL:   baseURL,
 	}, nil
 }
 
@@ -102,8 +104,9 @@ func (g *Generator) Generate() error {
 
 		outFile := filepath.Join(postDir, "index.html")
 		if err := g.renderTemplate(outFile, "post.html", map[string]interface{}{
-			"Post": post,
-			"Site": map[string]string{"Title": "Open Source UoM"},
+			"Title":   post.Title,
+			"Post":    post,
+			"BaseURL": g.BaseURL,
 		}); err != nil {
 			return err
 		}
@@ -119,9 +122,9 @@ func (g *Generator) Generate() error {
 			}
 			outFile := filepath.Join(pageDir, "index.html")
 			if err := g.renderTemplate(outFile, "blog-index.html", map[string]interface{}{
-				"Page":  page,
-				"Posts": g.Posts, // Pass posts for the listing
-				"Site":  map[string]string{"Title": "Open Source UoM"},
+				"Title":   "Όλα τα Άρθρα",
+				"Posts":   g.Posts,
+				"BaseURL": g.BaseURL,
 			}); err != nil {
 				return err
 			}
@@ -132,8 +135,8 @@ func (g *Generator) Generate() error {
 			}
 			outFile := filepath.Join(pageDir, "index.html")
 			if err := g.renderTemplate(outFile, "page.html", map[string]interface{}{
-				"Page": page,
-				"Site": map[string]string{"Title": "Open Source UoM"},
+				"Page":    page,
+				"BaseURL": g.BaseURL,
 			}); err != nil {
 				return err
 			}
@@ -153,9 +156,10 @@ func (g *Generator) Generate() error {
 	}
 
 	if err := g.renderTemplate(filepath.Join(g.OutputDir, "index.html"), "index.html", map[string]interface{}{
+		"Title":       homePost.Title,
 		"Page":        homePost,
 		"RecentPosts": recentPosts,
-		"Site":        map[string]string{"Title": "Open Source UoM"},
+		"BaseURL":     g.BaseURL,
 	}); err != nil {
 		return err
 	}

@@ -27,14 +27,17 @@ jobs:
         with:
           go-version: '1.21'
 
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
+
       - name: Build site
+        env:
+          BASE_URL: ${{ steps.pages.outputs.base_path }}/
         run: |
           cd generator
           go mod tidy
           go run .
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

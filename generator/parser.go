@@ -80,13 +80,18 @@ func ParseMarkdown(filePath string, slug string, isPage bool) (*Post, error) {
 		return nil, fmt.Errorf("error converting markdown in %s: %v", filePath, err)
 	}
 
+	featuredImage := fm.FeaturedImage
+	if strings.HasPrefix(featuredImage, "/") {
+		featuredImage = strings.TrimPrefix(featuredImage, "/")
+	}
+
 	post := &Post{
 		Slug:          slug,
 		OriginalPath:  filePath,
 		Title:         fm.Title,
 		Author:        fm.Author,
 		Tags:          fm.Tags,
-		FeaturedImage: fm.FeaturedImage,
+		FeaturedImage: featuredImage,
 		Date:          date,
 		Content:       buf.String(),
 		IsPage:        isPage,
